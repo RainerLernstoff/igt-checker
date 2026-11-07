@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w8" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 8</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Was kommt in den Hochofen?", a: ["Kupfererz und Koks", "Eisenerz und Koks", "Erdöl und Sauerstoff", "Stahlschrott und Wasser"], s: "MQ==" },
+  { f: "Ab wann spricht man von Stahl?", a: ["wenn mehr als 2 % Kohlenstoff drin ist", "wenn 21 % Sauerstoff drin ist", "wenn weniger als 2 % Kohlenstoff drin ist", "wenn gar kein Eisen mehr drin ist"], s: "Mg==" },
+  { f: "Was ist ein Nachteil von Stahl?", a: ["Er ist brennbar.", "Er hat eine geringe Festigkeit.", "Er ist nicht wiederverwertbar.", "Er rostet."], s: "Mw==" },
+  { f: "Welche Stahlrohre sind für sehr hohe Belastungen?", a: ["geschweißte Stahlrohre", "nahtlose Stahlrohre", "Roheisenrohre"], s: "MQ==" },
+  { f: "Welcher Stahl wird für Trinkwasser verwendet?", a: ["unlegierter Stahl ohne Schutz", "Roheisen", "Edelstahl"], s: "Mg==" },
+  { f: "Was ist ein Vorteil von Kupfer?", a: ["niedriger Preis", "geringes Gewicht", "guter Strom- und Wärmeleiter", "brennbar"], s: "Mg==" },
+  { f: "Wie werden Kupferrohre für Gasleitungen verbunden?", a: ["Weichlöten", "Hartlöten", "Kleben"], s: "MQ==" },
+  { f: "Was ist der Rohstoff für Kunststoff?", a: ["Erdöl", "Eisenerz", "Kupfererz", "Koks"], s: "MA==" },
+  { f: "Zu welcher Kunststoffart gehört ein Gummiband?", a: ["Elastomere", "Thermoplaste", "Duroplaste"], s: "MA==" },
+  { f: "Was drückt in der Extrusionsmaschine die weiche Masse durch die Matrize?", a: ["ein Dorn", "eine Rohrpresse", "eine Förderschnecke", "ein Hochofen"], s: "Mg==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>

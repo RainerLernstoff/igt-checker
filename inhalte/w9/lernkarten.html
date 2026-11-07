@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w8" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 8</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Nenne die drei wichtigsten Rohstoffe für Stahl.", a: "Eisenerz, Koks, Stahlschrott." },
+  { f: "Warum kann man Roheisen nicht bearbeiten?", a: "Es ist sehr viel Kohlenstoff (vom Koks) drin. Das macht es spröde." },
+  { f: "Was passiert beim LD-Verfahren?", a: "Sauerstoff wird auf das flüssige Roheisen geblasen. Der Kohlenstoff wird weniger. Unter 2 % Kohlenstoff heißt es Stahl." },
+  { f: "Nenne zwei Vorteile und zwei Nachteile von Stahl.", a: "Vorteile: hohe Festigkeit, wiederverwertbar. Nachteile: hohes Gewicht, Rost (Korrosion)." },
+  { f: "Wie entstehen geschweißte Stahlrohre?", a: "Eine Blechplatte wird gebogen und zu einem runden Rohr verschweißt." },
+  { f: "Wie entstehen nahtlose Stahlrohre?", a: "Ein heißer, runder Stahlblock wird gedreht. Gleichzeitig wird ein Dorn hineingetrieben." },
+  { f: "Welcher Stahl für Heizung, welcher für Trinkwasser?", a: "Heizung (geschlossener Kreislauf): unlegierter Stahl. Trinkwasser (offener Kreislauf): Edelstahl." },
+  { f: "Nenne zwei Vorteile und zwei Nachteile von Kupfer.", a: "Vorteile: temperaturbeständig, guter Strom- und Wärmeleiter. Nachteile: hohes Gewicht, hoher Preis." },
+  { f: "Wie entstehen Kupferrohre?", a: "Ein heißer Kupferbolzen wird in eine Rohrpresse gedrückt (Loch entsteht). Dann wird er durch eine Matrize gezogen. Der fliegende Dorn formt den Innendurchmesser." },
+  { f: "Wie lötet man Kupferrohre für Gas, Trinkwasser und Heizung (unter 90 °C)?", a: "Gas: Hartlöten. Trinkwasser und Heizung: Weichlöten." },
+  { f: "Was ist der Rohstoff für Kunststoff?", a: "Erdöl." },
+  { f: "Was ist Polymerisation?", a: "Die Moleküle (Monomere) werden in einer bestimmten Reihenfolge wieder zusammengesetzt." },
+  { f: "Nenne die drei Kunststoffarten mit Beispiel.", a: "Thermoplaste (schweißbar) – Folien, Duroplaste (spröde) – Steckdose, Elastomere (elastisch) – Gummiband." },
+  { f: "Nenne zwei Vorteile und zwei Nachteile von Kunststoff.", a: "Vorteile: geringes Gewicht, rostfrei. Nachteile: brennbar, verliert beim Recycling an Qualität." },
+  { f: "Wie entstehen Kunststoffrohre?", a: "Pellets kommen in eine Extrusionsmaschine. Eine Heizung macht sie weich. Eine Förderschnecke drückt die Masse durch eine Matrize." }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>
