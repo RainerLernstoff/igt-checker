@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w1" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 1</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Wozu dient die Normalprojektion?", a: "Sie zeigt einen Körper vollständig in Ansichten." },
+  { f: "Nenne die drei Ansichten der Normalprojektion.", a: "Vorderansicht, Seitenansicht, Draufsicht." },
+  { f: "Was ist die Draufsicht?", a: "Die Ansicht von oben." },
+  { f: "Nenne die drei Linienarten und wofür man sie verwendet.", a: "Durchgezogene Linien (Außenlinien), gestrichelte Linien (unsichtbare Kanten), strichpunktierte Linien (Symmetrielinien)." },
+  { f: "Nenne die zwei Linienstärken und wofür man sie verwendet.", a: "Breite Linien (Außenlinien), schmale Linien (unsichtbare Kanten, Symmetrielinien)." },
+  { f: "Wie zeichnest du unsichtbare Kanten?", a: "Gestrichelt und dünn (schmal)." },
+  { f: "Wie berechnest du den Durchmesser, wenn der Radius gegeben ist?", a: "Durchmesser = 2 · Radius (D = 2 · R)." },
+  { f: "Wie berechnest du den Radius, wenn der Durchmesser gegeben ist?", a: "Radius = Durchmesser : 2 (R = D : 2)." },
+  { f: "Was bedeuten DA, dI und s beim Rohr?", a: "DA = Außendurchmesser, dI = Innendurchmesser, s = Wandstärke." },
+  { f: "Wie berechnest du die Wandstärke s?", a: "s = (DA − dI) : 2" },
+  { f: "Was bedeutet „Rohr 32 x 5 L = 70“?", a: "Außendurchmesser 32 mm, Wandstärke 5 mm, Länge 70 mm." },
+  { f: "Wie viele Millimeter sind 1 cm?", a: "1 cm = 10 mm." }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w1" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 1</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Wie zeichnest du eine unsichtbare Kante?", a: ["durchgezogen und breit", "gestrichelt und schmal", "strichpunktiert und breit"], s: "MQ==" },
+  { f: "Wofür verwendet man strichpunktierte Linien?", a: ["für Außenlinien", "für unsichtbare Kanten", "für Symmetrielinien"], s: "Mg==" },
+  { f: "Wie zeichnest du Außenlinien?", a: ["durchgezogen und breit", "gestrichelt und schmal", "strichpunktiert und schmal"], s: "MA==" },
+  { f: "Welche Ansicht zeigt den Körper von oben?", a: ["Vorderansicht", "Draufsicht", "Seitenansicht"], s: "MQ==" },
+  { f: "Der Radius ist 10 mm. Wie groß ist der Durchmesser?", a: ["5 mm", "20 mm", "10 mm", "40 mm"], s: "MQ==" },
+  { f: "Der Durchmesser ist 46 mm. Wie groß ist der Radius?", a: ["92 mm", "46 mm", "23 mm", "13 mm"], s: "Mg==" },
+  { f: "Wie viele mm sind 3 cm?", a: ["3 mm", "30 mm", "300 mm"], s: "MQ==" },
+  { f: "Wie berechnest du die Wandstärke s?", a: ["s = (DA − dI) : 2", "s = DA − dI", "s = (DA + dI) : 2", "s = DA · 2"], s: "MA==" },
+  { f: "Ein Rohr hat DA = 20 mm und dI = 14 mm. Wie dick ist die Wand?", a: ["6 mm", "3 mm", "34 mm", "17 mm"], s: "MQ==" },
+  { f: "Was bedeutet „Rohr 32 x 5“?", a: ["Innendurchmesser 32 mm, Wandstärke 5 mm", "Außendurchmesser 32 mm, Wandstärke 5 mm", "Länge 32 mm, Außendurchmesser 5 mm"], s: "MQ==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>
