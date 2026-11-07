@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w5" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 5</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Welche Einheiten gibt es für Flächen?", a: "m², dm², cm², mm² (große Flächen: km²)" },
+  { f: "Wie groß ist die Umrechnungszahl bei Flächen?", a: "100. Von einer Einheit zur nächsten: · 100 oder : 100" },
+  { f: "Wie viele cm² hat 1 dm²?", a: "100 cm². (10 cm · 10 cm = 100 cm²)" },
+  { f: "Wie viele mm² hat 1 cm²?", a: "100 mm²" },
+  { f: "Wie viele dm² hat 1 m²?", a: "100 dm²" },
+  { f: "Wie viele m² hat 1 km²?", a: "1 000 000 m²" },
+  { f: "Wie rechnest du 250 mm² in cm² um?", a: ": 100 → 2,5 cm². Der Beistrich rutscht 2 Stellen nach links." },
+  { f: "Wie lautet die Formel für die Kreisfläche?", a: "A = D² · π : 4" },
+  { f: "Wie lautet die Formel für die Fläche vom Dreieck?", a: "A = Grundlinie · Höhe : 2" },
+  { f: "Wie berechnest du die Fläche von einem Halbkreis?", a: "A = D² · π : 8 (die halbe Kreisfläche)" },
+  { f: "Wie berechnest du eine zusammengesetzte Fläche?", a: "In einfache Teile zerlegen (Rechteck, Halbkreis, Dreieck). Dann alle Teile zusammenzählen." },
+  { f: "Was ist die Rohrinnenfläche Ai?", a: "Die Fläche vom Loch innen. Ai = d² · π : 4 (d = Innendurchmesser)" },
+  { f: "Was ist der Sägequerschnitt As?", a: "Der Ring, den die Säge durchschneidet. As = Außenkreisfläche − Innenkreisfläche" },
+  { f: "Wie berechnest du den Innendurchmesser d?", a: "d = D − 2 · s (D = Außendurchmesser, s = Wanddicke)" },
+  { f: "Wie berechnest du die Mantelfläche von einem Rohr?", a: "M = U · L. Umfang mal Rohrlänge. Der Umfang ist U = D · π." }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>

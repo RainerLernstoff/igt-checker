@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w5" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 5</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Wie groß ist die Umrechnungszahl bei Flächen?", a: ["10", "100", "1000"], s: "MQ==" },
+  { f: "Wie viele cm² sind 3 dm²?", a: ["30 cm²", "3000 cm²", "300 cm²"], s: "Mg==" },
+  { f: "Wie viele cm² sind 450 mm²?", a: ["4,5 cm²", "45 cm²", "0,45 cm²"], s: "MA==" },
+  { f: "Wie viele dm² sind 2,5 m²?", a: ["25 dm²", "250 dm²", "2500 dm²"], s: "MQ==" },
+  { f: "Wie lautet die Formel für die Kreisfläche?", a: ["A = D · π", "A = D · π : 4", "A = D² · π : 4"], s: "Mg==" },
+  { f: "Ein Dreieck hat die Grundlinie 6 cm und die Höhe 4 cm. Wie groß ist die Fläche?", a: ["24 cm²", "10 cm²", "12 cm²", "20 cm²"], s: "Mg==" },
+  { f: "Ein Kreis hat D = 10 cm. Wie groß ist die Fläche ungefähr?", a: ["31,4 cm²", "314 cm²", "100 cm²", "78,5 cm²"], s: "Mw==" },
+  { f: "Ein Rohr hat D = 40 mm und s = 4 mm. Wie groß ist der Innendurchmesser d?", a: ["36 mm", "44 mm", "32 mm"], s: "Mg==" },
+  { f: "Was ist der Sägequerschnitt As?", a: ["Außenkreisfläche minus Innenkreisfläche", "Außenkreisfläche plus Innenkreisfläche", "Nur die Fläche vom Loch innen"], s: "MA==" },
+  { f: "Wie berechnest du die Mantelfläche von einem Rohr?", a: ["M = D · L", "M = U · L", "M = U : L"], s: "MQ==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>

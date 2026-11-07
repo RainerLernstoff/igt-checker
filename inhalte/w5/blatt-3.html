@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 Dreieck und zusammengesetzte Flächen – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w5" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 5</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>3 Dreieck und zusammengesetzte Flächen</h1>
+<p>Zuerst die <b>Pflicht-Aufgaben</b> (★, ★★). Die <b>Extra-Aufgabe</b> (★★★) am Ende ist freiwillig.</p>
+<p>Tippe in die Kästchen. Dann tippe auf „Prüfen“.<br>Grün = richtig, Rot = schau noch einmal.</p>
+
+<h3>Fläche vom Dreieck</h3>
+<img src="bilder/dreieck_flaeche.png" alt="Dreieck mit den Seiten a, b und c. Die Höhe h_c steht senkrecht auf der Grundlinie c." style="width:300px">
+<div class="merk">
+<p><b>c</b> = Grundlinie (die Seite unten)</p>
+<p><b>h<sub>c</sub></b> = Höhe (steht senkrecht auf der Grundlinie c)</p>
+<p class="formel">A = <span class="bruch"><span>c · h<sub>c</sub></span><span>2</span></span></p>
+<p>Kurz gesagt: Grundlinie mal Höhe durch 2.</p>
+</div>
+<p class="tipp">Ein Dreieck ist genau die Hälfte von einem Rechteck. Darum : 2.</p>
+
+<h2>Aufgabe 1 ★</h2>
+<p class="auftrag">Berechne die Fläche vom Dreieck.</p>
+<table>
+<tr><td>c = 7 cm, h<sub>c</sub> = 3 cm: &nbsp; A =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTAsNQ=="><span class="einheit">cm²</span></td></tr>
+<tr><td>c = 12 cm, h<sub>c</sub> = 5 cm: &nbsp; A =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MzA="><span class="einheit">cm²</span></td></tr>
+</table>
+
+<h3>Zusammengesetzte Fläche</h3>
+<img src="bilder/zusammengesetzt_flaeche.png" alt="Fläche aus einem Rechteck A1 unten und einem Halbkreis A2 oben, Seiten b, Bogen a, Radius R" style="width:300px">
+<div class="merk">
+<p>Zerlege die Fläche in einfache Teile. Dann zähle zusammen:</p>
+<p class="formel">A = A<sub>1</sub> + A<sub>2</sub></p>
+<p>Rechteck: <b>A<sub>1</sub> = b · c</b> (c = Breite unten)</p>
+<p>Halbkreis: <b>A<sub>2</sub> = D² · π : 8</b> (halbe Kreisfläche, D = 2 · R)</p>
+</div>
+
+<h2>Aufgabe 2 ★★</h2>
+<img src="bilder/zusammengesetzt_aufgabe1.png" alt="Rechteck mit Halbkreis oben: unten c, Seiten b, Bogen a, Radius R" style="width:260px">
+<p><b>Gegeben:</b> c = 73 mm, b = 1,8 cm</p>
+<p class="auftrag">Berechne die Teilflächen, die ganze Fläche A, den Radius R und die Bogenlänge a.</p>
+<p class="tipp">Der Durchmesser vom Halbkreis ist so lang wie c. Rechne zuerst alles in mm (b = 18 mm). Bogenlänge vom Halbkreis: a = D · π : 2.</p>
+<table>
+<tr><td>Radius R =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MzYsNQ=="><span class="einheit">mm</span></td></tr>
+<tr><td>Halbkreis A<sub>2</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MjA5Miw2OQ==" data-t="1"><span class="einheit">mm²</span></td></tr>
+<tr><td>: 100 =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MjAsOTM=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Rechteck A<sub>1</sub> = 18 · 73 =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTMxNA=="><span class="einheit">mm²</span></td></tr>
+<tr><td>: 100 =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTMsMTQ="><span class="einheit">cm²</span></td></tr>
+<tr><td>Fläche A = A<sub>1</sub> + A<sub>2</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MzQsMDc=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Bogenlänge a =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTE0LDY3" data-t="1"><span class="einheit">mm</span></td></tr>
+<tr><td>: 100 =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MSwxNDc=" data-t="1"><span class="einheit">dm</span></td></tr>
+</table>
+
+<h2 class="extra">Extra: Wenn du noch Zeit hast ★★★</h2>
+<p><b>Pflicht geschafft! Du darfst hier aufhören.</b></p>
+<p>Diese Aufgabe ist <b>freiwillig</b>. Hier hat die Fläche drei Teile.</p>
+
+<h2>Aufgabe 3 ★★★</h2>
+<img src="bilder/zusammengesetzt_aufgabe2.png" alt="Rechteck mit Halbkreis oben und einem rechtwinkeligen Dreieck unten: Bogen a, Radius R, Seiten b, kurze Seite d, lange Seite c" style="width:240px">
+<p><b>Gegeben:</b> R = 39 mm, b = 1,8 cm, d = 2,3 cm</p>
+<p class="auftrag">Die Fläche besteht aus Halbkreis, Rechteck und Dreieck. Berechne alle Teile und die ganze Fläche A.</p>
+<p class="tipp">Das Dreieck hat die Grundlinie D und die Höhe d. Rechne in cm: R = 3,9 cm.</p>
+<table>
+<tr><td>Durchmesser D =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="Nyw4"><span class="einheit">cm</span></td></tr>
+<tr><td>Halbkreis A<sub>2</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MjMsODk=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Rechteck A<sub>1</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTQsMDQ=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Dreieck A<sub>3</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="OCw5Nw==" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Fläche A =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NDYsOQ==" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>Bogenlänge a =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MSwyMjU=" data-t="1"><span class="einheit">dm</span></td></tr>
+</table>
+</main>
+<script src="../../ausfuellen.js"></script>
+</body>
+</html>
