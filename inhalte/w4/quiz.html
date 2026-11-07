@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w4" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 4</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Woher kommt das Kaltwasser ins Gebäude?", a: ["aus dem Warmwasserbereiter", "von der öffentlichen Wasserversorgung oder einer Brunnenanlage", "aus der Abwasserleitung"], s: "MQ==" },
+  { f: "Warum liegt die Abwasserleitung im Gefälle?", a: ["damit das Wasser warm bleibt", "damit die Leitung kürzer ist", "damit das Abwasser von selbst abfließt"], s: "Mg==" },
+  { f: "Warum ist die Trinkwasserleitung ein offener Kreislauf?", a: ["Das Wasser wird verbraucht und fließt weg.", "Das Wasser fließt im Kreis zurück.", "Die Leitung hat einen Absperrhahn."], s: "MA==" },
+  { f: "Was ist der Motor des Wasserkreislaufs?", a: ["die Sonne", "der Wind", "der Mond", "die Pumpe"], s: "MA==" },
+  { f: "Welche Inhaltsstoffe führen zu Ablagerungen in den Rohren?", a: ["Nitrate", "Sauerstoff und Stickstoff", "Kalk, Eisen und Mangan"], s: "Mg==" },
+  { f: "Wie kommen Inhaltsstoffe in das Wasser?", a: ["Das Wasser sickert durch die Erde und löst Stoffe aus dem Boden.", "Die Sonne bringt sie beim Verdunsten ins Wasser.", "Sie kommen aus dem Warmwasserbereiter."], s: "MA==" },
+  { f: "Welche Kennfarbe hat der Vorlauf einer Heizung?", a: ["blau", "grün", "orange", "rot"], s: "Mw==" },
+  { f: "Welche Kennfarbe hat der Rücklauf einer Heizung?", a: ["blau", "rot", "grün", "braun"], s: "MA==" },
+  { f: "Was macht die Umwälzpumpe im Heizungskreislauf?", a: ["Sie befördert das Heizungswasser.", "Sie erhitzt das Heizungswasser.", "Sie gibt die Wärme an den Raum ab."], s: "MA==" },
+  { f: "Warum ist die Heizung ein geschlossener Kreislauf?", a: ["Das Wasser fließt in den Kanal.", "Es fließt immer dasselbe Wasser im Kreis.", "Die Heizkörper haben einen Deckel."], s: "MQ==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>

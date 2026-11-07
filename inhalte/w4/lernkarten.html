@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w4" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 4</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Woher kommt das Kaltwasser, das in das Gebäude gelangt?", a: "Über die öffentliche Wasserversorgung oder über eine Brunnenanlage." },
+  { f: "Wie entsteht das Warmwasser im Haus?", a: "Ein Teil vom Kaltwasser fließt zu einem Warmwasserbereiter. Der erwärmt das Wasser." },
+  { f: "Warum muss die Abwasserleitung im Gefälle verlegt werden?", a: "Damit das Abwasser von selbst (durch die Schwerkraft) abfließt." },
+  { f: "Was bedeutet „offener Kreislauf“?", a: "Das Wasser wird verbraucht und fließt über die Abwasserleitung weg. Es kommt nicht zurück." },
+  { f: "Nenne die Kennfarben für Kaltwasser, Warmwasser und Abwasser.", a: "Kaltwasser grün, Warmwasser orange, Abwasser braun oder schwarz." },
+  { f: "Was ist der Motor des Wasserkreislaufs?", a: "Die Sonne." },
+  { f: "Erkläre den Wasserkreislauf.", a: "Die Sonne erwärmt das Wasser. Es verdunstet. Es bilden sich Wolken. Das Wasser kommt als Niederschlag (Regen, Schnee) wieder zur Erde." },
+  { f: "Wie kommen die Inhaltsstoffe ins Wasser?", a: "Das Wasser sickert durch Erd- und Gesteinsschichten. Dabei wird es gefiltert und löst Stoffe aus dem Boden." },
+  { f: "Welche Inhaltsstoffe führen zu Ablagerungen?", a: "Kalk, Eisen und Mangan." },
+  { f: "Welche Inhaltsstoffe sind gesundheitsschädlich?", a: "Nitrate." },
+  { f: "Wie kommen Keime ins Wasser?", a: "Durch stehendes Wasser oder kaputte (schadhafte) Brunnen." },
+  { f: "Erkläre den Heizungskreislauf.", a: "Der Heizkessel erhitzt das Wasser. Die Umwälzpumpe bringt es zu den Heizkörpern (Vorlauf). Dort gibt es Wärme ab. Das abgekühlte Wasser fließt zurück zum Heizkessel (Rücklauf)." },
+  { f: "Was bedeutet „geschlossener Kreislauf“?", a: "Es ist immer dasselbe Wasser. Es fließt im Kreis: vom Heizkessel zu den Heizkörpern und wieder zurück." },
+  { f: "Nenne die zwei Leitungen einer Heizung und ihre Kennfarben.", a: "Vorlauf (rot) und Rücklauf (blau)." },
+  { f: "Wozu dienen Sinnbilder?", a: "Sie machen Pläne der Haustechnik leichter lesbar." }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>
