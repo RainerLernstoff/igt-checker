@@ -1,0 +1,218 @@
+/* =====================================================================
+   AUSSEHEN der App „Vorbereitungskurs“ – Schwarz-Weiß, hell und dunkel,
+   Leiste oben in Dunkelgrau (wie die Lern-App „IGT: Lernstoff“).
+   Gilt für die Startseite (.app), alle Blätter (.blatt), Lernkarten und Quiz.
+   ===================================================================== */
+
+/* ---------- Farben ---------- */
+:root {
+  --hg: #ffffff;        /* Hintergrund */
+  --text: #000000;      /* Schrift */
+  --rand: #000000;      /* Rahmen */
+  --flaeche: #ededed;   /* graue Kästen (Infokasten, Kopfzeile von Tabellen) */
+  --leise: #444444;     /* kleine, graue Schrift */
+  color-scheme: light;
+}
+/* Dunkel: wenn das Handy dunkel eingestellt ist (und nicht auf hell umgeschaltet wurde) … */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-thema="hell"]) {
+    --hg: #000000; --text: #ffffff; --rand: #ffffff; --flaeche: #262626; --leise: #bbbbbb;
+    color-scheme: dark;
+  }
+}
+/* … oder wenn man mit ◐ auf dunkel umgeschaltet hat */
+:root[data-thema="dunkel"] {
+  --hg: #000000; --text: #ffffff; --rand: #ffffff; --flaeche: #262626; --leise: #bbbbbb;
+  color-scheme: dark;
+}
+
+/* ---------- Grundlagen ---------- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--hg);
+  color: var(--text);
+  font-family: "Comic Sans MS", "Comic Neue", "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------- Leiste oben: Zurück · Titel · Hell/Dunkel ---------- */
+/* Immer Dunkelgrau mit weißer Schrift (hell und dunkel gleich) */
+.leiste {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 8px;
+  min-height: 60px; padding: 6px 10px;
+  background: #353338; color: #ffffff;
+}
+.leiste-titel {
+  flex: 1; margin: 0; min-width: 0;
+  font-size: 22px; font-weight: bold;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.leiste-knopf {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  font: inherit; font-size: 26px; line-height: 1; text-decoration: none;
+  color: #ffffff; background: transparent;
+  border: 2px solid #ffffff; border-radius: 12px; cursor: pointer;
+}
+.leiste-knopf[hidden] { display: none; }
+.leiste-knopf:focus-visible { outline-color: #ffffff; }
+
+/* Name im Logo-Stil: Großbuchstaben, Schreibmaschinen-Schrift, gesperrt, linksbündig */
+.leiste-titel.logo {
+  font-family: Consolas, "Roboto Mono", "SF Mono", Menlo, "Courier New", monospace;
+  font-weight: normal; font-size: 20px;
+  text-align: left; text-transform: uppercase; letter-spacing: 0.08em;
+  padding-left: 6px;
+}
+
+/* ---------- Startseite und Auswahl: große Knöpfe ---------- */
+.app { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; }
+.hinweis { font-size: 20px; margin: 4px 0 14px; }
+.untertitel { font-size: 16px; color: var(--leise); margin: 0 0 6px; }
+.abschnitt { font-size: 18px; text-transform: uppercase; letter-spacing: 0.06em; margin: 26px 0 10px; color: var(--leise); }
+.knopf-liste { display: flex; flex-direction: column; gap: 14px; }
+.knopf {
+  display: block; min-height: 72px; padding: 14px 18px;
+  color: var(--text); background: var(--hg); text-decoration: none;
+  border: 3px solid var(--rand); border-radius: 14px;
+}
+a.knopf:active { background: var(--text); color: var(--hg); }
+.knopf-name { display: block; font-size: 22px; font-weight: bold; }
+.knopf-info { display: block; font-size: 16px; color: var(--leise); margin-top: 2px; }
+a.knopf:active .knopf-info { color: var(--hg); }
+/* Woche ohne Inhalt: grau und gestrichelt, nicht antippbar */
+.knopf.aus { border-style: dashed; border-width: 2px; color: var(--leise); min-height: 0; }
+.knopf.aus .knopf-name { font-size: 19px; }
+:focus-visible { outline: 4px solid var(--text); outline-offset: 3px; }
+
+/* ---------- Blätter ---------- */
+.blatt { max-width: 760px; margin: 0 auto; padding: 16px 16px 48px; }
+.blatt h1 { font-size: 24px; line-height: 1.25; margin: 4px 0 10px; }
+.blatt h2 { font-size: 20px; margin: 30px 0 8px; padding-top: 14px; border-top: 2px solid var(--rand); }
+.blatt h3 { font-size: 18px; margin: 18px 0 6px; }
+.blatt p { margin: 0 0 8px; }
+.blatt ul { margin: 0 0 10px; padding-left: 22px; }
+.blatt .auftrag { font-weight: bold; }
+
+.blatt table { border-collapse: collapse; margin: 6px 0 12px; }
+.blatt td, .blatt th { padding: 6px 8px; vertical-align: middle; }
+
+/* Infokasten (Merke) */
+.blatt .merk { border: 2px solid var(--rand); background: var(--flaeche); padding: 10px 12px; border-radius: 10px; margin: 8px 0 12px; }
+.blatt .merk p:last-child { margin-bottom: 0; }
+.blatt .formel { font-size: 22px; font-weight: bold; text-align: center; margin: 10px 0; }
+.blatt .bruch { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 19px; }
+.blatt .bruch > span:first-child { border-bottom: 2px solid var(--text); padding: 0 4px; }
+
+/* Tabellen mit Gitter: zu breite Tabellen kann man seitlich wischen */
+.blatt .gitter { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.blatt .gitter td, .blatt .gitter th { border: 1px solid var(--rand); text-align: center; min-width: 40px; }
+.blatt .gitter th { background: var(--flaeche); }
+.blatt .gitter td:first-child { font-weight: bold; }
+
+/* Linienarten: kleines Muster vor dem Text */
+.blatt .linien td { text-align: left; }
+.blatt .linie { display: block; width: 70px; height: 0; border-top: 3px solid var(--text); }
+.blatt .linie.schmal { border-top-width: 1px; }
+.blatt .linie.strich { border-top-style: dashed; border-top-width: 2px; }
+.blatt .linie.strichpunkt { border: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--text) 0 14px, transparent 14px 18px, var(--text) 18px 21px, transparent 21px 25px); }
+
+/* Kennzeichnung: diese Aufgabe macht man am Papier */
+.blatt .papier { display: inline-block; font-size: 15px; font-weight: bold; padding: 2px 10px; border: 2px solid var(--rand); border-radius: 20px; margin: 0 0 8px; }
+
+/* Bilder: nie breiter als das Handy, immer auf weißem Grund (auch im Dunkelmodus) */
+.blatt img { display: block; max-width: 100%; height: auto; background: #ffffff; border-radius: 8px; padding: 4px; margin: 6px 0 12px; }
+
+/* ---------- Blätter zum Ausfüllen (ausfuellen.js) ---------- */
+.blatt .eintrag {
+  width: 5em; min-width: 44px; height: 42px; padding: 0 4px;
+  font: inherit; font-size: 20px; font-weight: bold; text-align: center;
+  border: 2px solid var(--rand); border-radius: 6px;
+  background: var(--hg); color: var(--text);
+}
+.blatt .einheit { margin-left: 4px; white-space: nowrap; }
+/* Feld und Einheit bleiben immer in einer Zeile */
+.blatt td:has(> .eintrag) { white-space: nowrap; }
+/* In Tabellen mit Gitter: etwas enger */
+.blatt .gitter td, .blatt .gitter th { padding: 6px 4px; }
+.blatt .gitter .einheit { margin-left: 2px; }
+/* Breite Tabellen (class="gitter eng"): schmälere Felder, damit sie ohne Wischen aufs Handy passen */
+.blatt .gitter.eng .eintrag { width: 2.8em; min-width: 0; font-size: 19px; }
+/* Rückmeldung nach „Prüfen“ */
+.blatt .eintrag.ist-richtig { background: rgba(30, 142, 62, 0.20); box-shadow: inset 0 0 0 3px #1e8e3e; }
+.blatt .eintrag.ist-falsch  { background: rgba(197, 34, 31, 0.22); box-shadow: inset 0 0 0 3px #c5221f; }
+
+/* Auswahl: eine von mehreren Möglichkeiten antippen */
+.blatt .wahl-gruppe { display: flex; flex-direction: column; gap: 8px; margin: 6px 0 14px; padding: 4px; border-radius: 12px; }
+.blatt .wahl {
+  display: block; width: 100%; min-height: 50px; padding: 8px 14px; text-align: left;
+  font: inherit; font-size: 20px; color: var(--text); background: var(--hg);
+  border: 2px solid var(--rand); border-radius: 10px; cursor: pointer;
+}
+.blatt .wahl[aria-pressed="true"] { border-width: 4px; font-weight: bold; }
+.blatt .wahl[aria-pressed="true"]::before { content: "● "; }
+.blatt .wahl-gruppe.ist-richtig { box-shadow: 0 0 0 4px #1e8e3e; background: rgba(30, 142, 62, 0.12); }
+.blatt .wahl-gruppe.ist-falsch  { box-shadow: 0 0 0 4px #c5221f; background: rgba(197, 34, 31, 0.12); }
+.blatt .aufgabe-formel { font-size: 22px; font-weight: bold; margin: 8px 0 4px; }
+.blatt .tipp { font-size: 16px; color: var(--leise); }
+
+.pruef-box { margin: 12px 0 6px; }
+.pruef-knopf, .gross-knopf {
+  display: block; width: 100%; min-height: 54px;
+  font: inherit; font-size: 20px; font-weight: bold;
+  color: var(--hg); background: var(--text);
+  border: 0; border-radius: 12px; cursor: pointer;
+}
+.pruef-ergebnis { margin: 8px 0 0; font-weight: bold; }
+.pruef-ergebnis:empty { display: none; }
+.pruef-ergebnis.gut { border-left: 6px solid #1e8e3e; padding-left: 10px; }
+.pruef-ergebnis.nochmal { border-left: 6px solid #c5221f; padding-left: 10px; }
+
+/* ---------- Lernkarten (lernkarten.js) ---------- */
+.stand { font-size: 16px; color: var(--leise); margin: 0 0 8px; }
+.karte {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 260px; padding: 20px; margin: 0 0 14px;
+  border: 3px solid var(--rand); border-radius: 16px;
+  font-size: 21px; cursor: pointer;
+}
+.karte-frage { font-weight: bold; }
+.karte-antwort { margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--rand); }
+.karte-tipp { margin-top: 16px; font-size: 16px; color: var(--leise); }
+.knopf-reihe { display: flex; gap: 12px; }
+.knopf-reihe > * { flex: 1; }
+.rand-knopf {
+  min-height: 54px; font: inherit; font-size: 19px; font-weight: bold;
+  color: var(--text); background: var(--hg);
+  border: 3px solid var(--rand); border-radius: 12px; cursor: pointer;
+}
+.rand-knopf:disabled { opacity: 0.35; cursor: default; }
+
+/* ---------- Quiz (quiz.js) ---------- */
+.frage { font-size: 21px; font-weight: bold; margin: 0 0 14px; }
+.antworten { display: flex; flex-direction: column; gap: 12px; margin: 0 0 14px; }
+.antwort {
+  display: block; width: 100%; min-height: 58px; padding: 10px 16px; text-align: left;
+  font: inherit; font-size: 19px; color: var(--text); background: var(--hg);
+  border: 3px solid var(--rand); border-radius: 12px; cursor: pointer;
+}
+.antwort:disabled { cursor: default; }
+.antwort.ist-richtig { background: rgba(30, 142, 62, 0.20); border-color: #1e8e3e; }
+.antwort.ist-falsch  { background: rgba(197, 34, 31, 0.22); border-color: #c5221f; }
+.antwort.ist-richtig::after { content: "  ✓"; font-weight: bold; }
+.antwort.ist-falsch::after  { content: "  ✗"; font-weight: bold; }
+.rueckmeldung { font-weight: bold; margin: 0 0 14px; }
+.rueckmeldung:empty { display: none; }
+.rueckmeldung.gut { border-left: 6px solid #1e8e3e; padding-left: 10px; }
+.rueckmeldung.nochmal { border-left: 6px solid #c5221f; padding-left: 10px; }
+.ergebnis-zahl { font-size: 44px; font-weight: bold; text-align: center; margin: 10px 0 4px; }
+
+/* Drucken: ohne Leiste, schwarz auf weiß */
+@media print {
+  .leiste, .pruef-box { display: none; }
+  :root { --hg: #fff; --text: #000; --rand: #000; --flaeche: #ededed; }
+}

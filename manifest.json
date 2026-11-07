@@ -1,0 +1,16 @@
+{
+  "name": "IGT Checker",
+  "short_name": "IGT Checker",
+  "description": "Vorbereitungskurs für künftige Installateure: Fachkunde und Mathematik",
+  "lang": "de-AT",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#353338",
+  "theme_color": "#353338",
+  "icons": [
+    { "src": "symbole/symbol-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "symbole/symbol-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "symbole/symbol-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

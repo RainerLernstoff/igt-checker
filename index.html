@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IGT Checker</title>
+<meta name="description" content="Vorbereitungskurs für künftige Installateure: Fachkunde und Mathematik">
+<meta name="theme-color" content="#353338">
+<!-- PWA: damit man die App zum Startbildschirm hinzufügen kann -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="symbole/symbol-192.png">
+<link rel="apple-touch-icon" href="symbole/symbol-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="IGT Checker">
+<link rel="stylesheet" href="style.css">
+<!-- thema.js zuerst laden, damit die Seite nicht kurz hell aufblitzt -->
+<script src="thema.js"></script>
+</head>
+<body>
+
+<header class="leiste">
+  <a class="leiste-knopf" id="zurueck" href="#/" aria-label="Zurück" hidden>←</a>
+  <h1 class="leiste-titel logo" id="titel">IGT Checker</h1>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+
+<main class="app" id="haupt">
+  <noscript><p>Bitte JavaScript einschalten.</p></noscript>
+</main>
+
+<script src="inhalte.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
