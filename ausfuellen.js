@@ -5,10 +5,12 @@
 //  Kästchen (button.kreuz) → antippen = ✗.
 //  Unter jeder Aufgabe ein Knopf „Prüfen“: zeigt grün/rot und die Punkte.
 //  Punkte: jedes richtige Feld, jede richtige Auswahl, jedes richtige Kreuz = 1 Punkt.
-//  Es wird NICHTS gespeichert.
+//  Eingaben und geprüfte Aufgaben merkt sich fortschritt.js NUR auf diesem Handy.
+//  Beim Wiederöffnen: „Willkommen zurück“ und weiter bei der ersten ungeprüften Aufgabe.
 // =====================================================================
 (function () {
   "use strict";
+  window.AUSFUELLEN = true;   // fortschritt.js: dieses Blatt hat Aufgaben zum Prüfen
 
   // Die richtige Antwort steht leicht verschlüsselt im Blatt (data-s), damit man sie nicht sofort sieht.
   function soll(el) {
@@ -123,7 +125,13 @@
       });
     });
     if (!felder.length && !kreuze.length && !gruppen.length) return;
-    aufgaben.push({ felder: felder, kreuze: kreuze, gruppen: gruppen, letztes: teile[teile.length - 1] });
+    aufgaben.push({ felder: felder, kreuze: kreuze, gruppen: gruppen, letztes: teile[teile.length - 1], kopf: h });
+  });
+
+  // Pflicht = alle Aufgaben vor der Überschrift „Extra“ (gibt es keine, ist alles Pflicht)
+  var extra = haupt.querySelector("h2.extra");
+  aufgaben.forEach(function (a) {
+    a.pflicht = !extra || !!(a.kopf.compareDocumentPosition(extra) & Node.DOCUMENT_POSITION_FOLLOWING);
   });
 
   // Kreuze nach Tabellenzeilen ordnen (eine Zeile zählt nur, wenn sie ganz stimmt)
@@ -179,7 +187,7 @@
     knopf.type = "button";
     knopf.className = "pruef-knopf";
     knopf.textContent = "Prüfen";
-    knopf.addEventListener("click", function () { pruefen(a); });
+    knopf.addEventListener("click", function () { pruefen(a); geprueft(a); });
     a.ausgabe = document.createElement("p");
     a.ausgabe.className = "pruef-ergebnis";
     a.ausgabe.setAttribute("aria-live", "polite");
@@ -187,4 +195,121 @@
     box.appendChild(a.ausgabe);
     a.letztes.after(box);
   });
+
+  // =====================================================================
+  //  MERKEN (nur auf diesem Handy, über fortschritt.js)
+  // =====================================================================
+  var F = window.FORTSCHRITT;
+  var datei = F && F.blattName(location.pathname);
+  if (!F || !datei) return;
+
+  var alleFelder = [].slice.call(haupt.querySelectorAll("input.eintrag"));
+  var alleGruppen = [].slice.call(haupt.querySelectorAll(".wahl-gruppe"));
+  var alleKreuze = [].slice.call(haupt.querySelectorAll("button.kreuz"));
+  var pflichtAnzahl = aufgaben.filter(function (a) { return a.pflicht; }).length;
+
+  // Was gerade eingetragen ist (Auswahl über den Text, weil sie bei jedem Öffnen neu gemischt wird)
+  function werte() {
+    return {
+      f: alleFelder.map(function (f) { return f.value; }),
+      w: alleGruppen.map(function (g) {
+        var b = g.querySelector('.wahl[aria-pressed="true"]');
+        return b ? b.textContent : null;
+      }),
+      k: alleKreuze.map(function (k) { return k.getAttribute("aria-pressed") === "true" ? 1 : 0; })
+    };
+  }
+
+  function sichern(extraArbeit) {
+    F.aendern(datei, function (b) {
+      b.werte = werte();
+      b.anzahl = pflichtAnzahl;
+      if (extraArbeit) extraArbeit(b);
+      var erledigt = aufgaben.filter(function (a, i) { return a.pflicht && b.geprueft.indexOf(i) >= 0; }).length;
+      b.fertig = erledigt >= pflichtAnzahl;
+      b.erledigt = erledigt;
+    });
+  }
+
+  function haken(a) {
+    if (a.kopf.querySelector(".haken")) return;
+    var s = document.createElement("span");
+    s.className = "haken";
+    s.textContent = " ✓";
+    s.setAttribute("aria-label", "geprüft");
+    a.kopf.appendChild(s);
+  }
+
+  function geprueft(a) {
+    if (!F || !datei) return;   // ohne Speicher (z. B. als Datei geöffnet): einfach nichts merken
+    var i = aufgaben.indexOf(a);
+    haken(a);
+    sichern(function (b) { if (b.geprueft.indexOf(i) < 0) b.geprueft.push(i); });
+  }
+
+  // Beim Tippen und Antippen mitspeichern (kurz warten, damit nicht bei jedem Buchstaben)
+  var warte = null;
+  function spaeter() { clearTimeout(warte); warte = setTimeout(function () { sichern(); }, 400); }
+  haupt.addEventListener("input", function (e) { if (e.target.matches("input.eintrag")) spaeter(); });
+  document.addEventListener("click", function (e) { if (e.target.closest(".wahl, .kreuz, td")) spaeter(); });
+  window.addEventListener("pagehide", function () { if (warte) { clearTimeout(warte); sichern(); } });
+
+  // ---------- Beim Öffnen: Gespeichertes zurückholen ----------
+  var alt = F.blatt(datei);
+  var hatEtwas = alt && alt.werte && (
+    alt.werte.f.some(function (x) { return x; }) || alt.werte.w.some(function (x) { return x; }) ||
+    alt.werte.k.some(function (x) { return x; }) || alt.geprueft.length);
+
+  if (hatEtwas) {
+    alleFelder.forEach(function (f, i) { if (alt.werte.f[i] != null) f.value = alt.werte.f[i]; });
+    alleGruppen.forEach(function (g, i) {
+      var text = alt.werte.w[i];
+      if (!text) return;
+      g.querySelectorAll(".wahl").forEach(function (b) { b.setAttribute("aria-pressed", b.textContent === text ? "true" : "false"); });
+    });
+    alleKreuze.forEach(function (k, i) {
+      var an = alt.werte.k[i] === 1;
+      k.setAttribute("aria-pressed", an ? "true" : "false");
+      k.textContent = an ? "✗" : "";
+    });
+    // Schon geprüfte Aufgaben wieder grün/rot zeigen
+    alt.geprueft.forEach(function (i) { if (aufgaben[i]) { pruefen(aufgaben[i]); haken(aufgaben[i]); } });
+
+    // Erste Pflicht-Aufgabe, die noch nicht geprüft ist
+    var naechste = aufgaben.filter(function (a, i) { return a.pflicht && alt.geprueft.indexOf(i) < 0; })[0];
+    var kasten = document.createElement("div");
+    kasten.className = "willkommen";
+    kasten.setAttribute("role", "status");
+    var t1 = document.createElement("p");
+    t1.className = "willkommen-titel";
+    var t2 = document.createElement("p");
+    if (naechste) {
+      t1.textContent = "Willkommen zurück!";
+      t2.textContent = "Deine Eingaben sind noch da. Weiter bei " + naechste.kopf.firstChild.textContent.replace(/\s*[★✓].*$/, "").trim() + ".";
+      naechste.kopf.before(kasten);
+    } else {
+      t1.textContent = "✓ Dieses Blatt hast du schon erledigt.";
+      t2.textContent = "Deine Eingaben sind noch da." + (extra ? " Wenn du magst: Mach das Extra." : "");
+      var h1 = haupt.querySelector("h1");
+      (h1 || haupt.firstChild).after(kasten);
+    }
+    kasten.appendChild(t1);
+    kasten.appendChild(t2);
+    if (naechste) setTimeout(function () { kasten.scrollIntoView({ block: "start" }); window.scrollBy(0, -70); }, 50);
+  }
+
+  // Ganz unten: alles leeren und neu anfangen
+  var neu = document.createElement("div");
+  neu.className = "neu-box";
+  var neuKnopf = document.createElement("button");
+  neuKnopf.type = "button";
+  neuKnopf.className = "rand-knopf";
+  neuKnopf.textContent = "Alles leeren und neu anfangen";
+  neuKnopf.addEventListener("click", function () {
+    if (!window.confirm("Alle Eingaben auf diesem Blatt löschen und neu anfangen?")) return;
+    F.vergessen(datei);
+    location.reload();
+  });
+  neu.appendChild(neuKnopf);
+  haupt.appendChild(neu);
 })();
