@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 Volumen vom Rohrmaterial – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w7" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 7</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>5 Volumen vom Rohrmaterial</h1>
+<p>Zuerst die <b>Pflicht-Aufgaben</b> (★★). Die <b>Extra-Aufgaben</b> (★★★) am Ende sind freiwillig.</p>
+<p>Tippe in die Kästchen. Dann tippe auf „Prüfen“.<br>Grün = richtig, Rot = schau noch einmal.</p>
+
+<p><b>Rohrmaterial</b> = die Rohrwand selbst (Stahl, Kupfer oder Kunststoff). Das brauchst du später, um auszurechnen, wie schwer ein Rohr ist.</p>
+<img src="bilder/rohrmaterial.png" alt="Rohr, die Rohrwand ist als Rohrmaterial markiert" style="width:340px">
+
+<div class="merk">
+<p><b>A<sub>S</sub></b> = Sägequerschnitt (der Ring, den du nach dem Absägen siehst)</p>
+<p><b>V<sub>M</sub></b> = Volumen vom Rohrmaterial</p>
+<p class="formel">A<sub>S</sub> = D<sub>A</sub>² · π : 4 − d<sub>i</sub>² · π : 4</p>
+<p>Kürzer geht es so: <b>A<sub>S</sub> = (D<sub>A</sub>² − d<sub>i</sub>²) · π : 4</b></p>
+<p class="formel">V<sub>M</sub> = A<sub>S</sub> · L</p>
+</div>
+<p class="tipp">Großer Kreis (außen) minus kleiner Kreis (innen) = Ring.</p>
+
+<h3>Beispiel</h3>
+<img src="bilder/rohr_querschnitt.png" alt="Querschnitt vom Rohr: innen 32 mm, außen 40 mm, die Rohrwand ist schraffiert" style="width:140px">
+<p><b>Gegeben:</b> Rohr 40x4, L = 700 cm<br>D<sub>A</sub> = 40 mm = 4 cm, d<sub>i</sub> = 32 mm = 3,2 cm</p>
+<p>A<sub>S</sub> = 4² · π : 4 − 3,2² · π : 4</p>
+<p>A<sub>S</sub> = 12,57 cm² − 8,04 cm² = <b>4,53 cm²</b></p>
+<p>V<sub>M</sub> = 4,53 cm² · 700 cm = 3171 cm³ ≈ <b>3,17 dm³</b></p>
+<p class="tipp">Achtung Einheiten! Beim Rohr steht der Durchmesser in mm, die Länge oft in cm oder m.</p>
+
+<h2>Aufgabe 1 ★★</h2>
+<p class="auftrag">Rohr: D<sub>A</sub> = 33 mm, d<sub>i</sub> = 28 mm, L = 3,4 m. Berechne A<sub>S</sub> und V<sub>M</sub>.</p>
+<p class="tipp">Rechne in cm: 33 mm = 3,3 cm, 28 mm = 2,8 cm, 3,4 m = 340 cm.<br>Tippe mit Klammer: <b>( 3,3² − 2,8² ) · π : 4</b></p>
+<table>
+<tr><td>A<sub>S</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MiwzOTU=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>V<sub>M</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="ODE0LDQ2" data-t="1"><span class="einheit">cm³</span></td></tr>
+</table>
+
+<h2>Aufgabe 2 ★★</h2>
+<p class="auftrag">Rohr: D<sub>A</sub> = 1,7 dm, d<sub>i</sub> = 1,5 dm, L = 3420 mm. Berechne A<sub>S</sub> und V<sub>M</sub>.</p>
+<p class="tipp">Rechne alles in dm: 3420 mm = 34,2 dm. Dann A<sub>S</sub> in cm² umrechnen (1 dm² = 100 cm²). Für V<sub>M</sub> nimm A<sub>S</sub> in <b>dm²</b>, nicht in cm².</p>
+<table>
+<tr><td>A<sub>S</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NTAsMjc=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>V<sub>M</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTcsMTk=" data-t="1"><span class="einheit">dm³</span></td></tr>
+</table>
+
+<h2 class="extra">Extra: Wenn du noch Zeit hast ★★★</h2>
+<p><b>Pflicht geschafft! Du darfst hier aufhören.</b></p>
+<p>Diese Aufgaben sind <b>freiwillig</b>. Hier musst du umformen.</p>
+
+<h2>Aufgabe 3 ★★★</h2>
+<p class="auftrag">Hier ist A<sub>S</sub> schon gegeben. Berechne, was fehlt.</p>
+<p class="tipp">Rohr 1: 34 cm² = 0,34 dm². Rohr 2: umgeformt A<sub>S</sub> = V<sub>M</sub> : L. Rohr 3: 3,4 cm = 34 mm, 1 cm³ = 1000 mm³.</p>
+<table class="gitter">
+<tr><th colspan="2">Rohr 1</th></tr>
+<tr><td>A<sub>S</sub></td><td>34 cm²</td></tr>
+<tr><td>L</td><td>350 dm</td></tr>
+<tr><td>V<sub>M</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTE5"><span class="einheit">dm³</span></td></tr>
+</table>
+<table class="gitter">
+<tr><th colspan="2">Rohr 2</th></tr>
+<tr><td>A<sub>S</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NA=="><span class="einheit">cm²</span></td></tr>
+<tr><td>L</td><td>17 cm</td></tr>
+<tr><td>V<sub>M</sub></td><td>68 cm³</td></tr>
+</table>
+<table class="gitter">
+<tr><th colspan="2">Rohr 3</th></tr>
+<tr><td>A<sub>S</sub></td><td>125 mm²</td></tr>
+<tr><td>L</td><td>3,4 cm</td></tr>
+<tr><td>V<sub>M</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NCwyNQ=="><span class="einheit">cm³</span></td></tr>
+</table>
+</main>
+<script src="../../ausfuellen.js"></script>
+</body>
+</html>

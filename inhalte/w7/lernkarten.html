@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w7" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 7</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Was ist das Volumen?", a: "Wie viel Platz ein Körper hat. Zum Beispiel: wie viel Wasser in ein Rohr passt." },
+  { f: "Wie heißt die Einheiten-Treppe beim Volumen?", a: "m³ → dm³ → cm³ → mm³. Bei jeder Stufe · 1000." },
+  { f: "Wie viele dm³ sind 1 Liter?", a: "1 Liter = 1 dm³" },
+  { f: "Wie viele Liter passen in 1 m³?", a: "1 m³ = 1000 dm³ = 1000 Liter" },
+  { f: "Wie viele cm³ sind 1 dm³?", a: "1 dm³ = 1000 cm³" },
+  { f: "Wie lautet die Volumen-Formel?", a: "V = G · h (Volumen = Grundfläche mal Höhe)" },
+  { f: "Wie berechnest du die Grundfläche vom Prisma?", a: "G = a · b (ein Rechteck)" },
+  { f: "Wie berechnest du die Grundfläche vom Zylinder?", a: "G = D² · π : 4 (ein Kreis)" },
+  { f: "Was musst du vor dem Rechnen immer machen?", a: "Alle Werte in die gleiche Einheit umrechnen." },
+  { f: "Was heißt „Rohr 40x4“?", a: "Außendurchmesser 40 mm, Wandstärke 4 mm." },
+  { f: "Wie berechnest du den Innendurchmesser aus DA und s?", a: "di = DA − 2 · s. Die Wand ist links und rechts, darum 2 · s." },
+  { f: "Mit welchem Durchmesser rechnest du den Rohrinhalt?", a: "Mit dem Innendurchmesser di. Das Wasser ist innen im Rohr." },
+  { f: "Wie berechnest du den Rohrinhalt?", a: "G = di² · π : 4 und dann VR = G · L" },
+  { f: "Was ist der Sägequerschnitt AS?", a: "Der Ring, den du nach dem Absägen vom Rohr siehst. AS = DA² · π : 4 − di² · π : 4" },
+  { f: "Wie berechnest du das Volumen vom Rohrmaterial?", a: "VM = AS · L (Sägequerschnitt mal Rohrlänge)" }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>

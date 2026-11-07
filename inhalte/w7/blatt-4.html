@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 Rohrinhalt – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w7" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 7</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>4 Rohrinhalt</h1>
+<p>Zuerst die <b>Pflicht-Aufgaben</b> (★★). Die <b>Extra-Aufgaben</b> (★★★) am Ende sind freiwillig.</p>
+<p>Tippe in die Kästchen. Dann tippe auf „Prüfen“.<br>Grün = richtig, Rot = schau noch einmal.</p>
+
+<p><b>Rohrinhalt</b> = wie viel Wasser in ein Rohr passt.</p>
+<img src="bilder/rohrinhalt.png" alt="Rohr, innen ist der Rohrinhalt markiert" style="width:340px">
+<p>Das Wasser ist <b>innen</b> im Rohr. Darum rechnest du mit dem <b>Innendurchmesser d<sub>i</sub></b>.</p>
+
+<div class="merk">
+<p><b>D<sub>A</sub></b> = Außendurchmesser</p>
+<p><b>d<sub>i</sub></b> = Innendurchmesser</p>
+<p><b>s</b> = Wandstärke (wie dick die Rohrwand ist)</p>
+<p><b>G</b> = Grundfläche (der Kreis innen)</p>
+<p><b>L</b> = Rohrlänge</p>
+<p><b>V<sub>R</sub></b> = Volumen vom Rohrinhalt</p>
+</div>
+<div class="merk">
+<p class="formel">G = d<sub>i</sub>² · π : 4</p>
+<p class="formel">V<sub>R</sub> = G · L</p>
+<p>Wandstärke: <b>D<sub>A</sub> = d<sub>i</sub> + 2 · s</b> und <b>d<sub>i</sub> = D<sub>A</sub> − 2 · s</b></p>
+</div>
+<p class="tipp">Die Wand ist links und rechts. Darum 2 · s.</p>
+
+<h3>Beispiel</h3>
+<img src="bilder/rohr_40x4.png" alt="Rohr 40x4, Länge L = 700 cm, D ist der Außendurchmesser" style="width:340px">
+<img src="bilder/rohr_querschnitt.png" alt="Querschnitt vom Rohr: innen 32 mm, außen 40 mm" style="width:140px">
+<p><b>Rohr 40x4</b> heißt: Außendurchmesser 40 mm, Wandstärke 4 mm.</p>
+<p><b>Gegeben:</b> D<sub>A</sub> = 40 mm = 4 cm, d<sub>i</sub> = 32 mm = 3,2 cm, L = 7000 mm = 700 cm</p>
+<p>G = 3,2² · π : 4 = <b>8,04 cm²</b></p>
+<p>V = 8,04 cm² · 700 cm = 5628 cm³ ≈ <b>5,63 dm³ = 5,63 Liter</b></p>
+<p class="tipp">Rechne mit cm. Dann bekommst du cm³. 1000 cm³ = 1 dm³ = 1 Liter.</p>
+
+<h2>Aufgabe 1 ★★</h2>
+<p class="auftrag">Rohr: D<sub>A</sub> = 23 mm, d<sub>i</sub> = 20 mm, L = 560 cm. Berechne s, G und V<sub>R</sub>.</p>
+<p class="tipp">s = (D<sub>A</sub> − d<sub>i</sub>) : 2. Für G rechne in cm: 20 mm = 2 cm.</p>
+<table>
+<tr><td>s =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MSw1"><span class="einheit">mm</span></td></tr>
+<tr><td>G =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MywxNDI=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>V<sub>R</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTc1OSwz" data-t="1"><span class="einheit">cm³</span></td></tr>
+</table>
+
+<h2>Aufgabe 2 ★★</h2>
+<p class="auftrag">Rohr: d<sub>i</sub> = 48 mm, s = 0,8 cm, L = 3,2 dm. Berechne D<sub>A</sub>, G und V<sub>R</sub>.</p>
+<p class="tipp">0,8 cm = 8 mm. Für V<sub>R</sub>: G in cm² umrechnen (: 100) und 3,2 dm = 32 cm.</p>
+<table>
+<tr><td>D<sub>A</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NjQ="><span class="einheit">mm</span></td></tr>
+<tr><td>G =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTgwOSw2" data-t="1"><span class="einheit">mm²</span></td></tr>
+<tr><td>V<sub>R</sub> =</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NTc5LDA2" data-t="1"><span class="einheit">cm³</span></td></tr>
+</table>
+
+<h2 class="extra">Extra: Wenn du noch Zeit hast ★★★</h2>
+<p><b>Pflicht geschafft! Du darfst hier aufhören.</b></p>
+<p>Diese Aufgaben sind <b>freiwillig</b>. Hier musst du oft umformen und umrechnen.</p>
+
+<h2>Aufgabe 3 ★★★</h2>
+<p class="auftrag">Berechne, was fehlt. Achte auf die Einheiten!</p>
+<p class="tipp">d<sub>i</sub> = D<sub>A</sub> − 2 · s. Für G: d<sub>i</sub> von mm in cm umrechnen (: 10). Für V<sub>R</sub>: G in cm² mal L in cm, dann : 1000 für dm³.</p>
+<table class="gitter">
+<tr><th colspan="2">Rohr 1</th></tr>
+<tr><td>D<sub>A</sub></td><td>75 mm</td></tr>
+<tr><td>d<sub>i</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NDk="><span class="einheit">mm</span></td></tr>
+<tr><td>s</td><td>13 mm</td></tr>
+<tr><td>G</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTgsODY=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>L</td><td>332 cm</td></tr>
+<tr><td>V<sub>R</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NiwyNjE=" data-t="1"><span class="einheit">dm³</span></td></tr>
+</table>
+
+<h2>Aufgabe 4 ★★★</h2>
+<p class="auftrag">Berechne, was fehlt. Achte auf die Einheiten!</p>
+<table class="gitter">
+<tr><th colspan="2">Rohr 2</th></tr>
+<tr><td>D<sub>A</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MTg5"><span class="einheit">mm</span></td></tr>
+<tr><td>d<sub>i</sub></td><td>183 mm</td></tr>
+<tr><td>s</td><td>3 mm</td></tr>
+<tr><td>G</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="MjYzLDAy" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>L</td><td>168 mm</td></tr>
+<tr><td>V<sub>R</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NDQxOCw4" data-t="1"><span class="einheit">cm³</span></td></tr>
+</table>
+
+<h2>Aufgabe 5 ★★★</h2>
+<p class="auftrag">In das Rohr passen 3,6 Liter. Wie lang ist das Rohr?</p>
+<p class="tipp">3,6 Liter = 3600 cm³. Umgeformt: L = V<sub>R</sub> : G. Du bekommst cm. Dann in mm umrechnen.</p>
+<table class="gitter">
+<tr><th colspan="2">Rohr 3</th></tr>
+<tr><td>D<sub>A</sub></td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="OTY="><span class="einheit">mm</span></td></tr>
+<tr><td>d<sub>i</sub></td><td>90 mm</td></tr>
+<tr><td>s</td><td>3 mm</td></tr>
+<tr><td>G</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NjMsNjI=" data-t="1"><span class="einheit">cm²</span></td></tr>
+<tr><td>L</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NTY1LDk=" data-t="1"><span class="einheit">mm</span></td></tr>
+<tr><td>V<sub>R</sub></td><td>3,6 Liter</td></tr>
+</table>
+</main>
+<script src="../../ausfuellen.js"></script>
+</body>
+</html>

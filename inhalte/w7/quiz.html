@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w7" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 7</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Wie viele cm³ sind 1 dm³?", a: ["10 cm³", "1000 cm³", "100 cm³"], s: "MQ==" },
+  { f: "Wie viele Liter sind 1 dm³?", a: ["10 Liter", "1000 Liter", "1 Liter"], s: "Mg==" },
+  { f: "Wie viele cm³ sind 2,5 Liter?", a: ["2500 cm³", "250 cm³", "25 cm³"], s: "MA==" },
+  { f: "Wie viele m³ sind 4000 dm³?", a: ["40 m³", "4 m³", "0,4 m³"], s: "MQ==" },
+  { f: "Wie lautet die Volumen-Formel?", a: ["V = G : h", "V = G + h", "V = G · h"], s: "Mg==" },
+  { f: "Prisma: a = 2 cm, b = 3 cm, h = 5 cm. Wie groß ist V?", a: ["10 cm³", "15 cm³", "30 cm³", "25 cm³"], s: "Mg==" },
+  { f: "Wie berechnest du die Grundfläche vom Zylinder?", a: ["G = D · π", "G = D² · π : 4", "G = D · 4 : π"], s: "MQ==" },
+  { f: "Mit welchem Durchmesser rechnest du den Rohrinhalt?", a: ["Mit dem Außendurchmesser", "Mit der Wandstärke", "Mit dem Innendurchmesser"], s: "Mg==" },
+  { f: "Rohr 40x4: Wie groß ist der Innendurchmesser?", a: ["36 mm", "32 mm", "44 mm", "10 mm"], s: "MQ==" },
+  { f: "Was brauchst du für das Volumen vom Rohrmaterial?", a: ["Nur den großen Kreis außen", "Den Ring: großer Kreis minus kleiner Kreis", "Nur den kleinen Kreis innen"], s: "MQ==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>
