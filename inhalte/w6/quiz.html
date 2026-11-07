@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w6" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 6</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "Wie dick ist die Luftschicht der Erde ungefähr?", a: ["ca. 5 km", "ca. 50 km", "ca. 500 km", "ca. 5000 km"], s: "MQ==" },
+  { f: "Welcher Bestandteil macht den größten Teil der Luft aus?", a: ["Sauerstoff", "Edelgase", "Stickstoff"], s: "Mg==" },
+  { f: "Wie viel Sauerstoff ist in der Luft?", a: ["78 %", "1 %", "50 %", "21 %"], s: "Mw==" },
+  { f: "Welche drei Bestandteile hat die Luft?", a: ["Sauerstoff, Wasserstoff, Kohlenstoff", "Stickstoff, Sauerstoff, Edelgase", "Stickstoff, Wasser, Staub"], s: "MQ==" },
+  { f: "Wie groß ist der Luftdruck auf Meeresniveau?", a: ["ca. 101 mbar", "ca. 1013 mbar", "ca. 50 mbar", "ca. 10 000 mbar"], s: "MQ==" },
+  { f: "Was passiert mit dem Luftdruck, wenn die Seehöhe größer wird?", a: ["Er nimmt ab.", "Er nimmt zu.", "Er bleibt gleich."], s: "MA==" },
+  { f: "Wovon hängt der Luftdruck ab?", a: ["nur von der Uhrzeit", "nur von der Jahreszeit", "von der Wassertemperatur", "von der Höhenlage und vom Wetter"], s: "Mw==" },
+  { f: "Was braucht man für eine Verbrennung?", a: ["Stickstoff, Wärme, Wasser", "Sauerstoff, Wasser, Edelgase", "Sauerstoff, Wärme, brennbaren Stoff"], s: "Mg==" },
+  { f: "Was gehört NICHT zum Verbrennungsdreieck?", a: ["Sauerstoff", "Stickstoff", "Wärme", "brennbarer Stoff"], s: "MQ==" },
+  { f: "Eine Löschdecke kommt auf ein Feuer. Warum geht das Feuer aus?", a: ["Es bekommt zu viel Wärme.", "Es bekommt keinen Sauerstoff mehr.", "Die Decke macht das Feuer nass."], s: "MQ==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>
