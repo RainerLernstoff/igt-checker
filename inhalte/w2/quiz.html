@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w2" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 2</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<div id="quiz"></div>
+</main>
+<script>
+var QUIZ = [
+  { f: "x + 6 = 10. Wie groß ist x?", a: ["16", "4", "60"], s: "MQ==" },
+  { f: "5 · x = 35. Wie groß ist x?", a: ["30", "175", "7"], s: "Mg==" },
+  { f: "U = d · π. Wie lautet die Formel für d?", a: ["d = U : π", "d = U · π", "d = π : U"], s: "MA==" },
+  { f: "V = G · h. Wie lautet die Formel für h?", a: ["h = V · G", "h = V : G", "h = G : V"], s: "MQ==" },
+  { f: "Wie viele cm sind 2,5 m?", a: ["25 cm", "2500 cm", "250 cm"], s: "Mg==" },
+  { f: "Wie viele m sind 3,2 km?", a: ["3200 m", "320 m", "32 m"], s: "MA==" },
+  { f: "Wie viele cm sind 45 mm?", a: ["450 cm", "4,5 cm", "0,45 cm"], s: "MQ==" },
+  { f: "Ein Rohr hat d = 10 cm. Wie groß ist der Umfang ungefähr?", a: ["31,4 cm", "20 cm", "3,14 cm", "100 cm"], s: "MA==" },
+  { f: "Wie lautet die Formel für die Hypotenuse c?", a: ["c = √(a² + b²)", "c = a + b", "c = √(a² − b²)"], s: "MA==" },
+  { f: "Rechtwinkeliges Dreieck: a = 3 cm, b = 4 cm. Wie lang ist c?", a: ["7 cm", "12 cm", "5 cm", "25 cm"], s: "Mg==" }
+];
+</script>
+<script src="../../quiz.js"></script>
+</body>
+</html>

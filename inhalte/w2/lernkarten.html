@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lernkarten – IGT Checker</title>
+<meta name="theme-color" content="#353338">
+<link rel="icon" href="../../symbole/symbol-192.png">
+<link rel="stylesheet" href="../../style.css">
+<script src="../../thema.js"></script>
+</head>
+<body>
+<header class="leiste">
+  <a class="leiste-knopf" href="../../index.html#/woche/w2" aria-label="Zurück">←</a>
+  <span class="leiste-titel">Woche 2</span>
+  <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
+</header>
+<main class="blatt">
+<h1>Lernkarten</h1>
+<div id="karten"></div>
+</main>
+<script>
+var KARTEN = [
+  { f: "Wie bringst du „+ 4“ auf die andere Seite der Gleichung?", a: "Aus + wird −. Beispiel: x + 4 = 7 → x = 7 − 4 → x = 3" },
+  { f: "Wie bringst du „· 3“ auf die andere Seite der Gleichung?", a: "Aus · wird :. Beispiel: 3 · x = 21 → x = 21 : 3 → x = 7" },
+  { f: "Wie bringst du „: 4“ auf die andere Seite der Gleichung?", a: "Aus : wird ·. Beispiel: x : 4 = 3 → x = 3 · 4 → x = 12" },
+  { f: "Nenne die Längeneinheiten von groß nach klein.", a: "km → m → dm → cm → mm" },
+  { f: "Wie viele Meter sind 1 km?", a: "1 km = 1000 m" },
+  { f: "Wie rechnest du von m auf dm, von dm auf cm, von cm auf mm um?", a: "Jeweils · 10 (der Beistrich rutscht eine Stelle nach rechts)." },
+  { f: "Wie viele mm sind 1 m?", a: "1 m = 1000 mm (10 · 10 · 10)" },
+  { f: "Formel für den Kreisumfang?", a: "U = d · π" },
+  { f: "Wie berechnest du den Durchmesser, wenn der Umfang gegeben ist?", a: "d = U : π" },
+  { f: "Formel für die Bogenlänge vom Halbkreis?", a: "B = d · π : 2 (Viertelkreis: : 4, Achtelkreis: : 8)" },
+  { f: "Was ist die Hypotenuse?", a: "Die lange Seite im rechtwinkeligen Dreieck, gegenüber vom rechten Winkel." },
+  { f: "Formel für die Hypotenuse c?", a: "c = √(a² + b²)" },
+  { f: "Wie berechnest du die Seite a im rechtwinkeligen Dreieck?", a: "a = √(c² − b²)" }
+];
+</script>
+<script src="../../lernkarten.js"></script>
+</body>
+</html>
