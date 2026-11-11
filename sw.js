@@ -1,7 +1,7 @@
 // Offline-Speicher (Service Worker) der App „Vorbereitungskurs“.
 // Wird von werkzeuge\baue-inhalte.ps1 erzeugt. NICHT von Hand ändern.
 // Beim ersten Öffnen speichert das Handy alle Dateien. Danach geht die App auch ohne Internet.
-const VERSION = "vorbereitungskurs-5e51b7518b";
+const VERSION = "vorbereitungskurs-7ddc0b3654";
 const DATEIEN = [
   "./",
   "app.js",

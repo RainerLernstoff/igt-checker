@@ -186,6 +186,11 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .blatt .tipp { font-size: 16px; color: var(--leise); }
 
 .pruef-box { margin: 12px 0 6px; }
+/* Video-Kasten unter der Überschrift: Link zum passenden YouTube-Video */
+.video-box { border: 2px solid var(--rand); border-radius: 12px; padding: 8px 12px; margin: 4px 0 14px; }
+.video-box .video-link { display: block; min-height: 44px; padding: 8px 0; font-size: 19px; font-weight: bold; color: var(--text); text-decoration: underline; }
+.video-box .video-link + .video-link { border-top: 1px dashed var(--rand); }
+.video-box .tipp { margin: 0; }
 /* Fortschritt im Blatt: „Willkommen zurück“, Haken bei geprüften Aufgaben, Neu anfangen */
 .willkommen { border: 3px solid var(--rand); background: var(--flaeche); border-radius: 12px; padding: 10px 14px; margin: 16px 0 6px; }
 .willkommen p { margin: 0; }
