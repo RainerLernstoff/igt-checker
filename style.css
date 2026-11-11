@@ -109,6 +109,14 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .so-gehts ol { margin: 8px 0 8px; padding-left: 24px; }
 .so-gehts li { margin: 0 0 4px; }
 .so-gehts p { margin: 0 0 6px; }
+/* Mein Fortschritt: Knopf auf der Startseite und eigene Seite */
+.knopf.mein-fortschritt { margin: 16px 0 0; text-align: center; min-height: 0; }
+.balken { height: 18px; border: 3px solid var(--rand); border-radius: 10px; overflow: hidden; margin: 6px 0 8px; }
+.balken > div { height: 100%; background: var(--text); }
+.fortschritt-liste { margin: 14px 0 16px; border-top: 2px solid var(--rand); }
+.fortschritt-zeile { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 10px 2px; border-bottom: 1px solid var(--rand); }
+.fortschritt-woche { font-weight: bold; white-space: nowrap; }
+.fortschritt-zahl { font-size: 16px; color: var(--leise); text-align: right; }
 /* Fächer unten: zwei kleine Knöpfe nebeneinander */
 .knopf-liste.klein { flex-direction: row; gap: 10px; }
 .knopf-liste.klein .knopf { flex: 1; min-height: 0; padding: 10px; text-align: center; border-width: 2px; }

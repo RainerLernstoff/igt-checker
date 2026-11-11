@@ -66,7 +66,18 @@
     return "vor " + tage + " Tagen";
   }
 
-  window.FORTSCHRITT = { laden: laden, blatt: blatt, aendern: aendern, vergessen: vergessen, blattName: blattName, wann: wann };
+  // Quiz: bestes Ergebnis pro Woche merken ("…/inhalte/w3/quiz.html" → "w3")
+  function quizMerken(pfad, richtig, gesamt) {
+    var m = String(pfad || "").match(/inhalte\/(w\d+)\/quiz\.html/);
+    if (!m) return;
+    var d = laden();
+    d.quiz = d.quiz || {};
+    var alt = d.quiz[m[1]];
+    if (!alt || richtig >= alt.richtig) d.quiz[m[1]] = { richtig: richtig, gesamt: gesamt, zeit: Date.now() };
+    speichern(d);
+  }
+
+  window.FORTSCHRITT = { laden: laden, blatt: blatt, aendern: aendern, vergessen: vergessen, blattName: blattName, wann: wann, quizMerken: quizMerken };
 
   // ---------- Auf einem Blatt ----------
   var datei = blattName(location.pathname);

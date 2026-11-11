@@ -176,6 +176,7 @@
     a.ausgabe.textContent = punkte + " von " + a.max + (a.max === 1 ? " Punkt" : " Punkten") +
       (punkte === a.max ? " – super!" : " – schau bei Rot noch einmal nach.");
     a.ausgabe.className = "pruef-ergebnis " + (punkte === a.max ? "gut" : "nochmal");
+    a.punkte = punkte;   // für „Mein Fortschritt“
   }
 
   // Knopf "Prüfen" unter jede Aufgabe
@@ -244,7 +245,11 @@
     if (!F || !datei) return;   // ohne Speicher (z. B. als Datei geöffnet): einfach nichts merken
     var i = aufgaben.indexOf(a);
     haken(a);
-    sichern(function (b) { if (b.geprueft.indexOf(i) < 0) b.geprueft.push(i); });
+    sichern(function (b) {
+      if (b.geprueft.indexOf(i) < 0) b.geprueft.push(i);
+      b.punkte = b.punkte || {};
+      b.punkte[i] = [a.punkte || 0, a.max];   // letztes Prüfen zählt
+    });
   }
 
   // Beim Tippen und Antippen mitspeichern (kurz warten, damit nicht bei jedem Buchstaben)

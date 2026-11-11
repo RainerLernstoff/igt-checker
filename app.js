@@ -5,6 +5,7 @@
 //    #/              → Startseite: Begrüßung, „Weiter“-Knopf, So geht's, 10 Wochen, Fächer unten
 //    #/fach/fk       → alle Wochen von Fachkunde
 //    #/woche/w1      → Blätter, Lernkarten und Quiz von Woche 1 (mit Fortschritt)
+//    #/fortschritt   → Mein Fortschritt: Blätter, Punkte, Quiz pro Woche (zum Herzeigen)
 //  Den Fortschritt (nur auf diesem Handy) liefert fortschritt.js.
 // =====================================================================
 (function () {
@@ -53,6 +54,62 @@
     for (var i = pos + 1; i < liste.length; i++) if (offen(liste[i])) return liste[i];
     for (var j = 0; j < liste.length; j++) if (offen(liste[j])) return liste[j];
     return null;   // alles erledigt
+  }
+
+  // ---------- Seite „Mein Fortschritt“ (zum Herzeigen für Ausbilder / Berufsschule) ----------
+  function fortschrittSeite(daten) {
+    var teile = [];
+    var heute = new Date();
+    var zwei = function (n) { return (n < 10 ? "0" : "") + n; };
+    teile.push(absatz("Stand: " + zwei(heute.getDate()) + "." + zwei(heute.getMonth() + 1) + "." + heute.getFullYear(), "untertitel"));
+
+    var bl = alleBlaetter();
+    var fertig = bl.filter(function (x) { return stand(x.teil, daten).fertig; }).length;
+    teile.push(absatz(fertig + " von " + bl.length + " Blättern erledigt", "begruessung"));
+
+    var balken = document.createElement("div");
+    balken.className = "balken";
+    balken.setAttribute("role", "img");
+    balken.setAttribute("aria-label", Math.round(100 * fertig / bl.length) + " Prozent erledigt");
+    var fuell = document.createElement("div");
+    fuell.style.width = Math.round(100 * fertig / bl.length) + "%";
+    balken.appendChild(fuell);
+    teile.push(balken);
+
+    // Punkte aus allen geprüften Aufgaben (letztes Prüfen zählt)
+    var p = 0, max = 0;
+    Object.keys(daten.blaetter).forEach(function (k) {
+      var pk = daten.blaetter[k].punkte || {};
+      Object.keys(pk).forEach(function (i) { p += pk[i][0]; max += pk[i][1]; });
+    });
+    teile.push(absatz(max ? "Punkte in den Blättern: " + p + " von " + max : "Punkte in den Blättern: noch keine Aufgabe geprüft", "untertitel"));
+
+    // Eine Zeile pro Woche
+    var tab = document.createElement("div");
+    tab.className = "fortschritt-liste";
+    INHALTE.wochen.forEach(function (w) {
+      if (!w.teile.length) return;
+      var s = wochenStand(w, daten);
+      var q = daten.quiz && daten.quiz[w.id];
+      var zeile = document.createElement("div");
+      zeile.className = "fortschritt-zeile" + (s.alle && s.fertig === s.alle ? " fertig" : "");
+      var links = document.createElement("span");
+      links.className = "fortschritt-woche";
+      links.textContent = "Woche " + w.nr + (s.alle && s.fertig === s.alle ? " ✓" : "");
+      var rechts = document.createElement("span");
+      rechts.className = "fortschritt-zahl";
+      rechts.textContent = s.fertig + " von " + s.alle + " · Quiz " + (q ? q.richtig + "/" + q.gesamt : "–");
+      zeile.appendChild(links);
+      zeile.appendChild(rechts);
+      tab.appendChild(zeile);
+    });
+    teile.push(tab);
+
+    var hinweis = document.createElement("div");
+    hinweis.className = "so-gehts";
+    hinweis.appendChild(absatz("Zeig diese Seite deinem Ausbilder oder am ersten Schultag deinem Lehrer. Du kannst auch ein Bildschirmfoto machen.", ""));
+    teile.push(hinweis);
+    return teile;
   }
 
   function blattNr(t) { var m = t.datei.match(/blatt-(\d+)\.html$/); return m ? m[1] : ""; }
@@ -125,13 +182,18 @@
     var teile = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
     var fach = teile[0] === "fach" ? suche(INHALTE.faecher, teile[1]) : null;
     var woche = teile[0] === "woche" ? suche(INHALTE.wochen, teile[1]) : null;
+    var meinFortschritt = teile[0] === "fortschritt";
     var inhalt = [], ueberschrift = null, zurueckZiel = null;
     var daten = F.laden();
     var ziel = weiterZiel(daten);
     var etwasGemacht = Object.keys(daten.blaetter).length > 0;
     var hierWoche = etwasGemacht && ziel ? ziel.woche.id : null;
 
-    if (woche) {
+    if (meinFortschritt) {
+      ueberschrift = "Mein Fortschritt";
+      zurueckZiel = "#/";
+      fortschrittSeite(daten).forEach(function (el) { inhalt.push(el); });
+    } else if (woche) {
       ueberschrift = "Woche " + woche.nr;
       zurueckZiel = "#/";
       inhalt.push(absatz(woche.name + ": " + woche.info, "hinweis"));
@@ -196,6 +258,10 @@
 
       inhalt.push(absatz("Dein Kurs: 10 Wochen", "abschnitt"));
       inhalt.push(liste(INHALTE.wochen.map(function (w) { return wochenKnopf(w, daten, w.id === hierWoche, true); })));
+
+      var mf = knopf("Mein Fortschritt", "zum Herzeigen", "#/fortschritt");
+      mf.classList.add("mein-fortschritt");
+      inhalt.push(mf);
 
       inhalt.push(absatz("Nach Fach suchen", "abschnitt"));
       var faecher = liste(INHALTE.faecher.map(function (f) { return knopf(f.name, "", "#/fach/" + f.id); }));

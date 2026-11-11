@@ -115,6 +115,8 @@
     ort.innerHTML = "";
     ort.appendChild(el("h1", null, "Dein Ergebnis"));
     ort.appendChild(el("p", "ergebnis-zahl", richtig + " von " + fragen.length));
+    // Bestes Ergebnis merken (nur auf diesem Handy) – für „Mein Fortschritt“
+    if (window.FORTSCHRITT) window.FORTSCHRITT.quizMerken(location.pathname, richtig, fragen.length);
     var text = anteil === 1 ? "Super! Alles richtig."
       : anteil >= 0.7 ? "Gut gemacht! Schau dir die Fehler noch einmal im Blatt an."
       : "Lies das Blatt noch einmal durch. Dann probier es wieder.";
