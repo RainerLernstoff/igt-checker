@@ -56,7 +56,7 @@
     return null;   // alles erledigt
   }
 
-  // ---------- Seite „Mein Fortschritt“ (zum Herzeigen für Ausbilder / Berufsschule) ----------
+  // ---------- Seite „Mein Fortschritt“ (zum Herzeigen) ----------
   function fortschrittSeite(daten) {
     var teile = [];
     var heute = new Date();
@@ -104,11 +104,6 @@
       tab.appendChild(zeile);
     });
     teile.push(tab);
-
-    var hinweis = document.createElement("div");
-    hinweis.className = "so-gehts";
-    hinweis.appendChild(absatz("Zeig diese Seite deinem Ausbilder oder am ersten Schultag deinem Lehrer. Du kannst auch ein Bildschirmfoto machen.", ""));
-    teile.push(hinweis);
     return teile;
   }
 
@@ -267,6 +262,12 @@
       var faecher = liste(INHALTE.faecher.map(function (f) { return knopf(f.name, "", "#/fach/" + f.id); }));
       faecher.classList.add("klein");
       inhalt.push(faecher);
+
+      var ueber = document.createElement("a");
+      ueber.className = "link-klein";
+      ueber.href = "info.html";
+      ueber.textContent = "Über diese App";
+      inhalt.push(ueber);
     }
 
     // Auf der Startseite steht der Name im Logo-Stil

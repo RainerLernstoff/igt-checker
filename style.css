@@ -257,8 +257,37 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .rueckmeldung.nochmal { border-left: 6px solid #c5221f; padding-left: 10px; }
 .ergebnis-zahl { font-size: 44px; font-weight: bold; text-align: center; margin: 10px 0 4px; }
 
+/* ---------- Infoseite info.html (für Eltern und Lehrbetriebe) ---------- */
+.info { line-height: 1.45; }
+.info p { margin: 0 0 10px; }
+.info a { color: var(--text); }
+.info-titel { font-size: 30px; line-height: 1.2; margin: 4px 0 10px; }
+.info-gross { font-size: 19px; }
+.info .abschnitt { margin-top: 36px; padding-top: 14px; border-top: 2px solid var(--rand); }
+.info-liste { margin: 0 0 12px; padding-left: 22px; }
+.info-liste li { margin: 0 0 6px; }
+.haken-liste { list-style: none; padding-left: 0; }
+.haken-liste li::before { content: "✓ "; font-weight: bold; }
+.info-kasten { border: 2px solid var(--rand); background: var(--flaeche); border-radius: 14px; padding: 12px 16px; margin: 0 0 12px; }
+.info-kasten p:last-child { margin-bottom: 0; }
+.info-bilder { display: grid; grid-template-columns: 1fr; gap: 22px; }
+@media (min-width: 600px) { .info-bilder { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+.info-bild { margin: 0; }
+.info-bild img { display: block; width: 100%; max-width: 280px; height: auto; margin: 0 auto 8px; border: 3px solid var(--rand); border-radius: 14px; }
+.info-bild figcaption { font-size: 17px; }
+.info-qr { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.info-qr img { width: 140px; height: 140px; background: #ffffff; padding: 6px; border-radius: 8px; flex: none; }
+.info-qr div { flex: 1; min-width: 160px; }
+.info-adresse { font-weight: bold; word-break: break-word; }
+.knopf.spende { text-align: center; margin: 6px 0 8px; border-width: 4px; }
+.info-ende { margin-top: 30px; }
+.info-fuss { margin-top: 30px; padding-top: 14px; border-top: 2px dashed var(--rand); font-size: 15px; color: var(--leise); }
+.info-fuss a { color: var(--leise); }
+.link-klein { display: block; text-align: center; margin: 22px 0 0; font-size: 16px; color: var(--leise); }
+
 /* Drucken: ohne Leiste, schwarz auf weiß */
 @media print {
   .leiste, .pruef-box { display: none; }
   :root { --hg: #fff; --text: #000; --rand: #000; --flaeche: #ededed; }
 }
+.ohne-umbruch { white-space: nowrap; }
