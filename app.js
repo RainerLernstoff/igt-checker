@@ -240,10 +240,10 @@
       sum.textContent = "So geht's";
       so.appendChild(sum);
       var ol = document.createElement("ol");
-      ["Erledige eine Woche nach der anderen.",
-       "Lies das Blatt. Füll die Kästchen aus.",
-       "Tippe auf „Prüfen“: Grün = richtig, Rot = schau noch einmal.",
-       "Zum Schluss: Lernkarten und Quiz."].forEach(function (t) {
+      ["Arbeite eine Woche nach der anderen durch.",
+       "Lies zuerst das Arbeitsblatt. Gibt es ein Video? Dann schau es dir an.",
+       "Mach die Aufgaben. Tippe auf „Prüfen“: Grün = richtig, Rot = schau noch einmal.",
+       "Am Schluss: Lernkarten und Quiz. Beim Quiz siehst du nach jeder Frage die richtige Antwort."].forEach(function (t) {
         var li = document.createElement("li"); li.textContent = t; ol.appendChild(li);
       });
       so.appendChild(ol);
