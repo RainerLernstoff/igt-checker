@@ -29,6 +29,7 @@
 </div>
 <p class="nur-app">Tippe in die Kästchen. Dann tippe auf „Prüfen“.<br>Grün = richtig, Rot = schau noch einmal.</p>
 
+<div class="block">
 <h3>Radius und Durchmesser</h3>
 <img src="bilder/kreis.png" alt="Kreis mit Radius R50 und Durchmesser D100" style="width:230px">
 <div class="merk">
@@ -38,7 +39,9 @@
 <p>Der Durchmesser ist doppelt so groß wie der Radius.</p>
 </div>
 <p>Tipp: 1 cm = 10 mm</p>
+</div>
 
+<div class="block aufgabe">
 <h2>Aufgabe 1</h2>
 <p class="auftrag">Berechne den Durchmesser oder den Radius. Achtung: Manche Antworten sind in <b>cm</b>!</p>
 <p class="tipp">mm → cm ist : 10 (z. B. 28 mm = 2,8 cm). cm → mm ist · 10.</p>
@@ -50,7 +53,9 @@
 <tr><td>d</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="Miw4"><span class="einheit">cm</span></td><td>14 mm</td></tr>
 <tr><td>e</td><td>46 mm</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="Miwz"><span class="einheit">cm</span></td></tr>
 </table>
+</div>
 
+<div class="block aufgabe">
 <h2>Aufgabe 2</h2>
 <p class="auftrag">Rechne zuerst. Dann zeichne die Kreise am Papier mit dem Zirkel.</p>
 <table>
@@ -59,7 +64,10 @@
 </table>
 <p class="papier">✎ Dann am Papier zeichnen</p>
 <p>Tipp: Stell den Zirkel immer auf den <b>Radius</b> ein.</p>
+</div>
+<div class="zeichenplatz" aria-hidden="true"></div>
 
+<div class="block">
 <h3>Vorderansicht eines Rohres</h3>
 <img src="bilder/rohr_vorderansicht.png" alt="Rohr von vorne mit Außendurchmesser Da und Innendurchmesser di" style="width:230px">
 <div class="merk">
@@ -67,10 +75,23 @@
 <p><b>d<sub>I</sub></b> = Innendurchmesser</p>
 <p><b>s</b> = Wandstärke (wie dick die Rohrwand ist)</p>
 <p class="formel">s = <span class="bruch"><span>D<sub>A</sub> − d<sub>I</sub></span><span>2</span></span></p>
-<p>Die Wand ist zweimal im Rohr: oben und unten. Darum teilst du durch 2.</p>
 </div>
-<div class="zeichenplatz" aria-hidden="true"></div>
 
+<div class="merk">
+<p><b>Warum durch 2?</b></p>
+<table class="wand-balken" aria-label="Quer durch das Rohr: Wand, Loch, Wand. Zusammen der Außendurchmesser.">
+<tr><td class="wand">s</td><td class="loch">d<sub>I</sub> (Loch)</td><td class="wand">s</td></tr>
+<tr><td colspan="3" class="mass">◄──── D<sub>A</sub> ────►</td></tr>
+</table>
+<p>Geh im Bild von links nach rechts quer durch das Rohr:<br>zuerst eine <b>Wand</b>, dann das <b>Loch</b>, dann wieder eine <b>Wand</b>.</p>
+<p>D<sub>A</sub> − d<sub>I</sub> = <b>2 Wände</b>.<br>Du willst nur <b>1 Wand</b>. Darum teilst du durch 2.</p>
+<p><b>Beispiel:</b> D<sub>A</sub> = 50 mm, d<sub>I</sub> = 40 mm<br>
+50 − 40 = 10 mm → das sind 2 Wände<br>
+10 : 2 = 5 mm → <b>s = 5 mm</b></p>
+</div>
+</div>
+
+<div class="block aufgabe">
 <h2>Aufgabe 3</h2>
 <p class="auftrag">Berechne, was fehlt: Außendurchmesser, Innendurchmesser oder Wandstärke. Achtung auf cm und mm!</p>
 <p class="tipp">Außendurchmesser: D<sub>A</sub> = d<sub>I</sub> + s + s. &nbsp; Innendurchmesser: d<sub>I</sub> = D<sub>A</sub> − s − s.</p>
@@ -82,7 +103,9 @@
 <tr><td>d</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="Mg=="><span class="einheit">cm</span></td><td>14 mm</td><td>3 mm</td></tr>
 <tr><td>e</td><td>46 mm</td><td><input class="eintrag" type="text" inputmode="decimal" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Antwort" data-s="NDA="><span class="einheit">mm</span></td><td>3 mm</td></tr>
 </table>
+</div>
 
+<div class="block">
 <h3>Angabe von Rohren</h3>
 <img src="bilder/rohr_angabe.png" alt="Rohr 32 x 5 L = 70: Außendurchmesser 32 mm, Wandstärke 5 mm, Länge 70 mm" style="width:420px">
 <p><b>Rohr 32 x 5 L = 70</b> heißt:</p>
@@ -91,11 +114,15 @@
 <li>Wandstärke 5 mm</li>
 <li>Länge 70 mm</li>
 </ul>
+</div>
 
+<div class="block">
 <h3>Zeichnung eines Rohres</h3>
 <img src="bilder/rohr_zeichnung.png" alt="Rohr 32 x 5 in Vorderansicht und Seitenansicht, Länge 70 mm" style="width:520px">
 <p>Innen: 32 − 5 − 5 = 22 mm. In der Seitenansicht ist die Innenwand <b>unsichtbar</b>: gestrichelt.</p>
+</div>
 
+<div class="block aufgabe">
 <h2>Aufgabe 4</h2>
 <p class="auftrag">Rohr 35 x 5, Länge 65 mm. Rechne zuerst die Maße aus.</p>
 <table>
@@ -105,8 +132,10 @@
 </table>
 <p class="papier">✎ Dann am Papier zeichnen</p>
 <p class="auftrag">Zeichne das Rohr in Vorderansicht und Seitenansicht.</p>
+</div>
 <div class="zeichenplatz" aria-hidden="true"></div>
 
+<div class="block aufgabe">
 <h2>Aufgabe 5</h2>
 <p class="auftrag">Ein Rohr hat: Innendurchmesser 26 mm, Wandstärke 3 mm, Länge 65 mm. Wie groß ist der Außendurchmesser?</p>
 <table>
@@ -114,6 +143,7 @@
 </table>
 <p class="papier">✎ Dann am Papier zeichnen</p>
 <p class="auftrag">Zeichne das Rohr in Vorderansicht und Seitenansicht.</p>
+</div>
 <div class="zeichenplatz" aria-hidden="true"></div>
 </main>
 <script src="../../fortschritt.js"></script>

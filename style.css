@@ -154,6 +154,13 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .blatt .linie.strich { border-top-style: dashed; border-top-width: 2px; }
 .blatt .linie.strichpunkt { border: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--text) 0 14px, transparent 14px 18px, var(--text) 18px 21px, transparent 21px 25px); }
 
+/* Balken „Wand – Loch – Wand“ (Wandstärke beim Rohr) */
+.blatt .wand-balken { width: 100%; max-width: 360px; border-collapse: collapse; margin: 6px 0 10px; table-layout: fixed; }
+.blatt .wand-balken td { text-align: center; padding: 8px 4px; }
+.blatt .wand-balken .wand { width: 22%; border: 2px solid var(--rand); background: #b5b5b5; color: #000; font-weight: bold; }
+.blatt .wand-balken .loch { border: 2px solid var(--rand); background: var(--hg); }
+.blatt .wand-balken .mass { padding-top: 4px; font-weight: bold; white-space: nowrap; }
+
 /* Kennzeichnung: diese Aufgabe macht man am Papier */
 .blatt .papier { display: inline-block; font-size: 15px; font-weight: bold; padding: 2px 10px; border: 2px solid var(--rand); border-radius: 20px; margin: 0 0 8px; }
 
@@ -301,7 +308,7 @@ a.knopf:active .knopf-stand { color: var(--hg); }
   .leiste, .pruef-box, .pdf-box, .video-box, .willkommen, .neu-box, .haken, .nur-app { display: none !important; }
   .blatt .nur-druck { display: block; }
   /* Jede Zeichenaufgabe auf einer eigenen Seite (Wunsch vom 12.11.2026) */
-  .blatt .zusammen { break-before: page; }
+  .blatt .block.zeichen { break-before: page; }
   .blatt img.druck-beispiel { height: 65mm !important; width: auto !important; }
   /* Zeichnung am Ende der Zeichenaufgabe: so groß, dass sie den Rest der A4-Seite füllt */
   .blatt img.druck-gross { width: auto !important; max-width: 100%; max-height: none; padding: 0; margin: 8px 0 0; }
@@ -317,7 +324,9 @@ a.knopf:active .knopf-stand { color: var(--hg); }
   .blatt h1 { font-size: 17pt; margin: 0 0 8px; }
   .blatt h2 { font-size: 13.5pt; margin: 16px 0 6px; padding-top: 8px; break-after: avoid; }
   .blatt h3 { font-size: 12pt; margin: 10px 0 4px; break-after: avoid; }
-  .blatt img, .blatt table, .blatt .merk, .blatt .wahl-gruppe, .blatt .zusammen { break-inside: avoid; }
+  /* Regel: Angabe und Rechnung auf EINER Seite – jede Aufgabe (.block.aufgabe) wird nicht geteilt.
+     Lesetexte (.block ohne .aufgabe) dürfen über zwei Seiten gehen. */
+  .blatt img, .blatt table, .blatt .merk, .blatt .wahl-gruppe, .blatt .block.aufgabe { break-inside: avoid; }
   .blatt img { max-height: 120mm; width: auto; padding: 0; }
   .blatt .gitter { display: table; overflow: visible; }
   .blatt .formel, .blatt .aufgabe-formel { font-size: 14pt; }
