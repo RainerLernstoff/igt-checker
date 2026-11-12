@@ -324,9 +324,11 @@ a.knopf:active .knopf-stand { color: var(--hg); }
   .blatt h1 { font-size: 17pt; margin: 0 0 8px; }
   .blatt h2 { font-size: 13.5pt; margin: 16px 0 6px; padding-top: 8px; break-after: avoid; }
   .blatt h3 { font-size: 12pt; margin: 10px 0 4px; break-after: avoid; }
-  /* Regel: Angabe und Rechnung auf EINER Seite – jede Aufgabe (.block.aufgabe) wird nicht geteilt.
-     Lesetexte (.block ohne .aufgabe) dürfen über zwei Seiten gehen. */
-  .blatt img, .blatt table, .blatt .merk, .blatt .wahl-gruppe, .blatt .block.aufgabe { break-inside: avoid; }
+  /* Regel: Angabe und Rechnung auf EINER Seite – kein Abschnitt (.block) wird geteilt,
+     auch Lesetexte nicht (Bild und Erklärung gehören zusammen). Nur wenn ein Abschnitt
+     höher als eine ganze Seite ist, muss er geteilt werden. */
+  /* (Kein break-after: avoid bei Bildern: steht ein Bild am Ende eines Blocks, würde sonst der NÄCHSTE Block geteilt.) */
+  .blatt img, .blatt table, .blatt .merk, .blatt .wahl-gruppe, .blatt .block { break-inside: avoid; }
   .blatt img { max-height: 120mm; width: auto; padding: 0; }
   .blatt .gitter { display: table; overflow: visible; }
   .blatt .formel, .blatt .aufgabe-formel { font-size: 14pt; }
