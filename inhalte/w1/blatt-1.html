@@ -16,10 +16,15 @@
   <button class="leiste-knopf" type="button" data-thema-knopf aria-label="Hell oder dunkel">◐</button>
 </header>
 <main class="blatt">
+<div class="druck-kopf" aria-hidden="true"><span class="druck-app">IGT Checker · Woche 1</span><span class="druck-feld">Name: <span></span></span><span class="druck-feld">Datum: <span></span></span></div>
 <h1>1 Normalprojektion</h1>
 <div class="video-box">
 <a class="video-link" href="https://www.youtube.com/watch?v=DUZeajY347I" target="_blank" rel="noopener">▶ Video: 01 Normalprojektionen</a>
 <p class="tipp">Öffnet YouTube. Braucht Internet.</p>
+</div>
+<div class="pdf-box">
+<a class="pdf-link" href="blatt-1.pdf" download>⤓ PDF zum Ausdrucken</a>
+<p class="tipp">Zum Zeichnen und Rechnen am Papier. Braucht Internet.</p>
 </div>
 
 <div class="merk">
@@ -50,36 +55,52 @@
 </table>
 
 <h3>Beispiel</h3>
-<img src="bilder/ansichten_beispiel.png" alt="Beispiel: Vorderansicht, Seitenansicht von links und Draufsicht eines Körpers" style="width:420px">
+<img class="druck-beispiel" src="bilder/ansichten_beispiel.png" alt="Beispiel: Vorderansicht, Seitenansicht von links und Draufsicht eines Körpers" style="width:420px">
 
-<h2>Zeichenaufgabe 1</h2>
-<p class="papier">✎ Am Papier</p>
-<p>Du brauchst: Papier, weichen Bleistift, Lineal.</p>
-<img src="bilder/ansichten_aufgabe1.png" alt="Ansichten eines Körpers: oben die Ansicht von unten, darunter Vorderansicht, rechts Seitenansicht, unten Draufsicht" style="width:320px">
-<p class="tipp">Die dicke Figur ganz oben ist die <b>Ansicht von unten</b>. Sie ist schon fertig. Du bearbeitest die anderen drei Ansichten.</p>
-<p class="auftrag">1. Zeichne die Ansichten ab.</p>
-<p class="auftrag">2. Schreib dazu: Vorderansicht, Seitenansicht, Draufsicht.</p>
-<p class="auftrag">3. Die Linienstärke stimmt nicht. Zieh die Außenlinien mit einem weichen Bleistift nach.</p>
-<p class="auftrag">4. Es fehlen unsichtbare Kanten. Zeichne sie in die Seitenansicht und in die Draufsicht ein.</p>
+<!-- Zeichenaufgaben: class="nur-app" steht nur am Handy, class="nur-druck" nur im PDF.
+     class="papier im-bild" = man zeichnet direkt ins Bild, darum KEIN extra Kästchen-Raster darunter im PDF.
+     Das Bild steht am ENDE jeder Aufgabe: im PDF füllt es den Rest der Seite (Klasse druck-gross). -->
+<div class="zusammen"><h2>Zeichenaufgabe 1</h2>
+<p class="papier im-bild">✎ Am Papier</p>
+<p class="nur-app">Du brauchst: kariertes Papier, weichen Bleistift, Lineal.</p>
+<p class="nur-druck">Du brauchst: weichen Bleistift, Lineal.</p>
+<p>Im Bild unten siehst du einen Körper in 4 Ansichten. Die <b>dicke Figur ganz oben</b> ist die Ansicht von unten. Sie ist schon fertig. Du arbeitest an den <b>3 dünnen Figuren</b>.</p>
+<p class="auftrag nur-druck">Zeichne direkt in das Bild.</p>
+<p class="auftrag nur-app">Zuerst: Zeichne die 3 dünnen Figuren auf dein kariertes Papier ab. Zähl die Kästchen: 1 Kästchen im Bild = 1 Kästchen auf deinem Papier. Gleiche Lage wie im Bild.</p>
+<p class="tipp nur-app">Beispiel: Die Vorderansicht ist 10 Kästchen breit und 16 Kästchen hoch.</p>
+<p class="auftrag">1. Schreib zu jeder dünnen Figur den Namen: Vorderansicht, Seitenansicht, Draufsicht. <span class="tipp">(Schau beim Beispiel nach.)</span></p>
+<p class="auftrag">2. Zieh die Außenlinien mit dem weichen Bleistift <b>dick</b> nach.</p>
+<p class="auftrag">3. Es fehlen unsichtbare Kanten. Zeichne sie in die Seitenansicht und in die Draufsicht ein: <b>gestrichelt und dünn</b>.</p>
+<img class="druck-gross druck-a1" src="bilder/ansichten_aufgabe1_raster.png" alt="Ansichten eines Körpers im Kästchen-Raster: oben die Ansicht von unten (dick), darunter Vorderansicht, rechts Seitenansicht, unten Draufsicht (dünn)" style="width:340px"></div>
 
-<h2>Zeichenaufgabe 2</h2>
-<p class="papier">✎ Am Papier</p>
-<img src="bilder/ansichten_aufgabe2.png" alt="Drei Ansichten eines anderen Körpers, Linien noch zu dünn" style="width:320px">
-<p class="auftrag">Mach es genauso wie bei Zeichenaufgabe 1.</p>
-<p class="tipp">Die Seitenansicht ist nur angefangen (nur ein Strich). Zeichne sie fertig.</p>
-<ul>
-<li>Ansichten beschriften</li>
-<li>Außenlinien breit nachziehen</li>
-<li>Unsichtbare Kanten in Seitenansicht und Draufsicht einzeichnen</li>
-</ul>
+<div class="zusammen"><h2>Zeichenaufgabe 2</h2>
+<p class="papier im-bild">✎ Am Papier</p>
+<p>Wieder ein Körper in Ansichten (Bild unten). Die <b>Seitenansicht</b> ist nur angefangen (nur ein Strich).</p>
+<p class="auftrag nur-druck">Zeichne direkt in das Bild.</p>
+<p class="auftrag nur-app">Zuerst: Zeichne die Figuren auf dein kariertes Papier ab. Ungefähr gleich groß, gleiche Lage wie im Bild.</p>
+<p class="auftrag">1. Zeichne die Seitenansicht fertig.</p>
+<p class="auftrag">2. Schreib zu jeder Figur den Namen: Vorderansicht, Seitenansicht, Draufsicht.</p>
+<p class="auftrag">3. Zieh die Außenlinien mit dem weichen Bleistift <b>dick</b> nach.</p>
+<p class="auftrag">4. Zeichne die unsichtbaren Kanten in die Seitenansicht und in die Draufsicht ein: <b>gestrichelt und dünn</b>.</p>
+<img class="druck-gross druck-a2" src="bilder/ansichten_aufgabe2.png" alt="Drei Ansichten eines anderen Körpers, Linien noch zu dünn" style="width:320px"></div>
 
-<h2>Zeichenaufgabe 3</h2>
-<p class="papier">✎ Am Papier</p>
-<img src="bilder/ansichten_aufgabe3.png" alt="Nur die Vorderansicht eines Körpers ist gezeichnet" style="width:300px">
-<p class="tipp">Der Körper ist <b>3 cm tief</b>. Alle Kanten gehen gerade nach hinten.</p>
-<p class="auftrag">1. Zeichne die fehlenden Ansichten ein.</p>
-<p class="auftrag">2. Schreib dazu: Vorderansicht, Seitenansicht, Draufsicht.</p>
-<p class="auftrag">3. Zeichne unsichtbare Kanten gestrichelt und dünn.</p>
+<!-- Zeichenaufgabe 3: neu gezeichnet mit geraden Maßen in Kästchen (12.11.2026), im PDF große Kästchen -->
+<div class="zusammen"><h2>Zeichenaufgabe 3</h2>
+<p class="papier im-bild">✎ Am Papier</p>
+<p class="nur-app">Du brauchst: kariertes Papier, Bleistift, Lineal.</p>
+<p class="nur-druck">Du brauchst: Bleistift, Lineal.</p>
+<p>Im Bild unten ist nur die <b>Vorderansicht</b> gezeichnet. Du zeichnest die <b>Seitenansicht</b> und die <b>Draufsicht</b> dazu.</p>
+<div class="merk">
+<p><b>Maße:</b> <span class="ohne-umbruch">Breite <b>8 Kästchen</b></span> · <span class="ohne-umbruch">Höhe <b>12 Kästchen</b></span> · <span class="ohne-umbruch">Tiefe <b>6 Kästchen</b></span></p>
+</div>
+<p class="auftrag nur-druck">Zeichne direkt in das Raster.</p>
+<p class="auftrag nur-app">Zuerst: Zeichne die Vorderansicht auf dein kariertes Papier ab. Zähl die Kästchen.</p>
+<p class="auftrag">1. Seitenansicht: 3 Kästchen rechts daneben. Rechteck 6 breit, 12 hoch (gleich hoch wie die Vorderansicht).</p>
+<p class="auftrag">2. Draufsicht: 3 Kästchen darunter. Rechteck 8 breit, 6 hoch (gleich breit wie die Vorderansicht).</p>
+<p class="auftrag">3. Die Abschrägung siehst du auch von der Seite und von oben. Zeichne in beide Rechtecke eine Linie. <span class="tipp">(Lineal an die Ecke legen: waagrecht hinüber, senkrecht hinunter.)</span></p>
+<p class="auftrag">4. Den Ausschnitt unten siehst du von der Seite und von oben nicht. Zeichne ihn <b>gestrichelt und dünn</b> ein.</p>
+<p class="auftrag">5. Schreib dazu: Vorderansicht, Seitenansicht, Draufsicht.</p>
+<img class="druck-gross druck-a3" src="bilder/ansichten_aufgabe3_raster.png" alt="Vorderansicht eines Körpers im Kästchen-Raster: 8 Kästchen breit, 12 hoch, oben links abgeschrägt, unten ein Ausschnitt. Rechts und unten ist Platz." style="width:340px"></div>
 </main>
 <script src="../../fortschritt.js"></script>
 

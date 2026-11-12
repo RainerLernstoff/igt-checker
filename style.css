@@ -286,9 +286,69 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .info-fuss a { color: var(--leise); }
 .link-klein { display: block; text-align: center; margin: 22px 0 0; font-size: 16px; color: var(--leise); }
 
-/* Drucken: ohne Leiste, schwarz auf weiß */
+/* PDF-Knopf oben im Blatt (Datei zum Ausdrucken, nicht im Offline-Speicher) */
+.pdf-box { border: 2px solid var(--rand); border-radius: 12px; padding: 8px 12px; margin: 4px 0 14px; }
+.pdf-box .pdf-link { display: block; min-height: 44px; padding: 8px 0; font-size: 19px; font-weight: bold; color: var(--text); text-decoration: underline; }
+.pdf-box .tipp { margin: 0; }
+/* Nur im PDF/Ausdruck: Kopfzeile mit Name und Datum, Kästchen-Raster zum Zeichnen */
+.druck-kopf, .druck-hinweis, .zeichenplatz, .blatt .nur-druck { display: none; }
+
+/* ---------- Drucken / PDF: A4, schwarz auf weiß, ohne Knöpfe ---------- */
+@page { size: A4; margin: 14mm 14mm 16mm; }
 @media print {
-  .leiste, .pruef-box { display: none; }
-  :root { --hg: #fff; --text: #000; --rand: #000; --flaeche: #ededed; }
+  :root, :root[data-thema] { --hg: #fff; --text: #000; --rand: #000; --flaeche: #ededed; --leise: #333; color-scheme: light; }
+  body { font-size: 11.5pt; line-height: 1.35; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .leiste, .pruef-box, .pdf-box, .video-box, .willkommen, .neu-box, .haken, .nur-app { display: none !important; }
+  .blatt .nur-druck { display: block; }
+  /* Jede Zeichenaufgabe auf einer eigenen Seite (Wunsch vom 12.11.2026) */
+  .blatt .zusammen { break-before: page; }
+  .blatt img.druck-beispiel { height: 65mm !important; width: auto !important; }
+  /* Zeichnung am Ende der Zeichenaufgabe: so groß, dass sie den Rest der A4-Seite füllt */
+  .blatt img.druck-gross { width: auto !important; max-width: 100%; max-height: none; padding: 0; margin: 8px 0 0; }
+  .blatt img.druck-a1 { height: 180mm !important; }
+  .blatt img.druck-a2 { height: 175mm !important; }
+  .blatt img.druck-a3 { height: 133mm !important; }
+  .druck-hinweis { display: block; font-weight: bold; border: 1.5px solid #000; border-radius: 8px; padding: 4px 10px; margin: 0 0 10px; }
+  /* Frage und Antworten nicht über zwei Seiten zerreißen */
+  .blatt p:has(+ .wahl-gruppe), .blatt .papier { break-after: avoid; }
+  /* Strichpunkt-Linie als Bild (Farbverläufe gehen im PDF verloren) */
+  .blatt .linie.strichpunkt { height: 3px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='3'%3E%3Cpath d='M0 1.5h14M18 1.5h3M25 1.5h14M43 1.5h3M50 1.5h14M68 1.5h2' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat; }
+  .blatt { max-width: none; padding: 0; }
+  .blatt h1 { font-size: 17pt; margin: 0 0 8px; }
+  .blatt h2 { font-size: 13.5pt; margin: 16px 0 6px; padding-top: 8px; break-after: avoid; }
+  .blatt h3 { font-size: 12pt; margin: 10px 0 4px; break-after: avoid; }
+  .blatt img, .blatt table, .blatt .merk, .blatt .wahl-gruppe, .blatt .zusammen { break-inside: avoid; }
+  .blatt img { max-height: 120mm; width: auto; padding: 0; }
+  .blatt .gitter { display: table; overflow: visible; }
+  .blatt .formel, .blatt .aufgabe-formel { font-size: 14pt; }
+
+  /* Kopfzeile: Name und Datum zum Hinschreiben */
+  .druck-kopf { display: flex; gap: 16px; align-items: flex-end; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid #000; font-size: 11pt; }
+  .druck-kopf .druck-app { font-family: Consolas, "Courier New", monospace; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+  .druck-kopf .druck-feld { flex: 1; white-space: nowrap; }
+  .druck-kopf .druck-feld span { display: inline-block; width: 70%; border-bottom: 1px solid #000; }
+
+  /* Eingabefelder → leere Linie zum Hineinschreiben */
+  .blatt .eintrag { width: 6em; height: 1.6em; font-size: 11.5pt; border: 0; border-bottom: 1.5px solid #000; border-radius: 0; background: transparent; box-shadow: none; vertical-align: bottom; }
+  .blatt .gitter.eng .eintrag { width: 3.2em; font-size: 11pt; }
+  .blatt .gitter .eintrag { border-bottom: 0; }
+
+  /* Auswahl → Kästchen zum Ankreuzen */
+  .blatt .wahl-gruppe { display: block; gap: 0; margin: 2px 0 8px; padding: 0; box-shadow: none; background: none; }
+  .blatt .wahl { display: block; width: auto; min-height: 0; padding: 1px 0 1px 1.6em; text-indent: -1.6em; font-size: 11.5pt; font-weight: normal; border: 0; background: none; }
+  .blatt .wahl::before { content: "☐  "; font-weight: normal; }
+  .blatt .wahl[aria-pressed="true"]::before { content: "☒  "; font-weight: normal; }   /* falls jemand mit Eingaben druckt */
+  .blatt p .wahl-gruppe, .blatt li .wahl-gruppe, .blatt td .wahl-gruppe { display: inline; }
+  .blatt p .wahl, .blatt li .wahl, .blatt td .wahl { display: inline; padding: 0 0.6em 0 0; text-indent: 0; }
+  .blatt p .wahl-gruppe::before { content: "( "; }
+  .blatt p .wahl-gruppe::after { content: ")"; }
+
+  /* Platz zum Zeichnen: Kästchen-Raster 5 mm (als SVG-Bild, Farbverläufe gehen im PDF verloren) */
+  .zeichenplatz { display: block; height: 110mm; margin: 6px 0 10px; border: 1.5px solid #000; break-inside: avoid;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='M0 0.25H20M0.25 0V20' stroke='%23aaa' stroke-width='0.5'/%3E%3C/svg%3E") repeat;
+    background-size: 5mm 5mm; }
+  .zeichenplatz::before { content: "Platz zum Zeichnen"; display: inline-block; background: #fff; font-size: 9pt; padding: 0 4px; }
+
+  a { color: #000; text-decoration: none; }
 }
 .ohne-umbruch { white-space: nowrap; }
