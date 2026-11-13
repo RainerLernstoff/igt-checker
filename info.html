@@ -83,14 +83,20 @@
     <img class="info-foto" src="info/ueber-mich.jpg" width="400" height="400" alt="Foto von Rainer Mayrhofer">
     <p>Ich heiße Rainer Mayrhofer. Seit 2009 bringe ich angehenden Installateuren Fachkunde und Mathematik bei. Die App IGT Checker hilft den Jugendlichen, eventuelle Wissenslücken zu schließen und erfolgreich in den Lehrberuf zu starten.</p>
     <p>Neuartige Lernkonzepte interessieren mich. Die App habe ich privat und aus Eigeninteresse entwickelt. Sie ist kein offizielles Angebot einer Schule.</p>
-    <p>Falls Sie Unternehmer sind und Bedarf an Schulungskonzepten haben, zögern Sie nicht, mich anzusprechen.</p>
   </div>
 
-  <!-- 7. Kaffee spendieren -->
-  <h2 class="abschnitt">Einen Kaffee spendieren</h2>
-  <p>IGT Checker ist kostenlos und bleibt es. Wenn Ihnen die App gefällt, können Sie als Elternteil oder Lehrbetrieb freiwillig einen Kaffee spendieren. Das hilft mir, die App weiter zu verbessern.</p>
-  <a class="knopf spende" href="https://www.paypal.biz/rainerlernstoff" target="_blank" rel="noopener"><span class="knopf-name">☕ Kaffee für Entwickler spenden</span><span class="knopf-info">Öffnet PayPal. Braucht Internet.</span></a>
-  <p class="tipp">Dieser Aufruf richtet sich an Erwachsene. Die App funktioniert ohne Spende genauso.</p>
+  <!-- 7. Für Organisationen -->
+  <h2 class="abschnitt">Für Organisationen und Ausbildungsbetriebe</h2>
+  <p>Sie möchten IGT Checker für Ihre Lehrlinge, Kurse oder Mitglieder einsetzen? Ich passe die App gerne an: eigene Inhalte, eigenes Logo, eigener Kursplan. Schreiben Sie mir, ich stelle Ihnen die App gerne persönlich vor.</p>
+  <a class="knopf spende" id="kontakt-knopf" href="#kontakt"><span class="knopf-name">✉ Kontakt aufnehmen</span><span class="knopf-info">Öffnet Ihr E-Mail-Programm.</span></a>
+
+  <!-- 8. Unterstützen -->
+  <h2 class="abschnitt">IGT Checker unterstützen</h2>
+  <p>Für Lehrlinge ist IGT Checker kostenlos. Neue Blätter, Lernkarten und Videos entstehen in meiner Freizeit. Wenn Sie als Elternteil oder Lehrbetrieb diese Arbeit unterstützen möchten, freue ich mich über einen freiwilligen Beitrag.</p>
+  <div class="knopf-liste klein" style="margin: 6px 0 10px">
+    <a class="knopf" href="https://www.paypal.biz/rainerlernstoff" target="_blank" rel="noopener"><span class="knopf-name">Freiwilligen Beitrag geben</span><span class="knopf-info">Öffnet PayPal. Braucht Internet.</span></a>
+  </div>
+  <p class="tipp">Dieser Aufruf richtet sich an Erwachsene. Die App funktioniert ohne Beitrag genauso.</p>
 
   <a class="knopf weiter info-ende" href="./"><span class="knopf-name">▶ App öffnen</span></a>
 
@@ -108,6 +114,8 @@
     var adr = "rd.mayrhofer" + String.fromCharCode(64) + "gmail.com";
     a.href = "mailto:" + adr;
     a.textContent = adr;
+    // Knopf „Kontakt aufnehmen“: gleiche Adresse, mit Betreff
+    document.getElementById("kontakt-knopf").href = "mailto:" + adr + "?subject=" + encodeURIComponent("IGT Checker für Organisationen");
   })();
 </script>
 </body>
