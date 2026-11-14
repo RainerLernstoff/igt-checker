@@ -159,7 +159,14 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .blatt .wand-balken td { text-align: center; padding: 8px 4px; }
 .blatt .wand-balken .wand { width: 22%; border: 2px solid var(--rand); background: #b5b5b5; color: #000; font-weight: bold; }
 .blatt .wand-balken .loch { border: 2px solid var(--rand); background: var(--hg); }
-.blatt .wand-balken .mass { padding-top: 4px; font-weight: bold; white-space: nowrap; }
+.blatt .wand-balken .mass { padding: 0; font-weight: bold; white-space: nowrap; }
+/* Maßlinie wie in der technischen Zeichnung: Maßhilfslinien an den Außenkanten, Pfeile bis zu den Außenkanten */
+.blatt .masslinie { position: relative; height: 36px; margin: 0 -1px; border-left: 2px solid var(--rand); border-right: 2px solid var(--rand); }
+.blatt .masslinie::before { content: ""; position: absolute; left: 0; right: 0; top: 27px; border-top: 2px solid var(--rand); }
+.blatt .masslinie .pfeil { position: absolute; top: 23px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.blatt .masslinie .pfeil.links { left: 0; border-right: 12px solid var(--rand); }
+.blatt .masslinie .pfeil.rechts { right: 0; border-left: 12px solid var(--rand); }
+.blatt .masslinie .mass-text { position: absolute; left: 50%; top: 2px; transform: translateX(-50%); }
 
 /* Kennzeichnung: diese Aufgabe macht man am Papier */
 .blatt .papier { display: inline-block; font-size: 15px; font-weight: bold; padding: 2px 10px; border: 2px solid var(--rand); border-radius: 20px; margin: 0 0 8px; }
