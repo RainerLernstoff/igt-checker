@@ -12,14 +12,17 @@
   "use strict";
 
   var F = window.FORTSCHRITT || { laden: function () { return { zuletzt: null, blaetter: {} }; }, wann: function () { return ""; } };
+  // Probe-Version ab dem Stichtag (freischaltung.js): nur Woche 1 und 2 offen
+  var Z = window.FREISCHALTUNG || { probe: function () { return false; }, gesperrt: function () { return false; } };
 
   // ---------- Fortschritt auswerten ----------
   function istBlatt(t) { return /blatt-\d+\.html$/.test(t.datei); }
 
-  // Alle Blätter in Kursreihenfolge (W1 Blatt 1 … W10 Blatt 2)
+  // Alle OFFENEN Blätter in Kursreihenfolge (W1 Blatt 1 … W10 Blatt 2; in der Probe-Version nur W1, W2)
   function alleBlaetter() {
     var liste = [];
     INHALTE.wochen.forEach(function (w) {
+      if (Z.gesperrt(w.id)) return;
       w.teile.forEach(function (t) { if (istBlatt(t)) liste.push({ woche: w, teil: t }); });
     });
     return liste;
@@ -89,6 +92,13 @@
     tab.className = "fortschritt-liste";
     INHALTE.wochen.forEach(function (w) {
       if (!w.teile.length) return;
+      if (Z.gesperrt(w.id)) {
+        var zu = document.createElement("div");
+        zu.className = "fortschritt-zeile";
+        zu.innerHTML = '<span class="fortschritt-woche">Woche ' + w.nr + '</span><span class="fortschritt-zahl">🔒 Vollversion</span>';
+        tab.appendChild(zu);
+        return;
+      }
       var s = wochenStand(w, daten);
       var q = daten.quiz && daten.quiz[w.id];
       var zeile = document.createElement("div");
@@ -150,6 +160,7 @@
 
   // Knopf für eine Woche: grau, solange es noch keine Teile gibt. Mit Fortschritt.
   function wochenKnopf(w, daten, hier, ohneInfo) {
+    if (Z.gesperrt(w.id)) return knopf("Woche " + w.nr + ": " + w.name, "🔒 in der Vollversion", null);
     var fertig = w.teile.length > 0;
     var k = knopf("Woche " + w.nr + ": " + w.name, fertig ? (ohneInfo ? "" : w.info) : "kommt bald", fertig ? "#/woche/" + w.id : null);
     if (!fertig || !daten) return k;
@@ -192,7 +203,13 @@
       ueberschrift = "Woche " + woche.nr;
       zurueckZiel = "#/";
       inhalt.push(absatz(woche.name + ": " + woche.info, "hinweis"));
-      if (woche.teile.length) {
+      if (Z.gesperrt(woche.id)) {
+        inhalt.push(absatz("🔒 Woche " + woche.nr + " gibt es in der Vollversion.", "begruessung"));
+        inhalt.push(absatz("Woche 1 und 2 kannst du frei machen.", "untertitel"));
+        var zs = knopf("▶ Zur Startseite", "Woche 1 und 2", "#/");
+        zs.classList.add("weiter");
+        inhalt.push(liste([zs]));
+      } else if (woche.teile.length) {
         inhalt.push(liste(woche.teile.map(function (t) {
           var k = knopf(t.name, t.info, t.datei);
           if (!istBlatt(t)) return k;
@@ -221,7 +238,7 @@
       // Großer Knopf: dort weitermachen, wo man aufgehört hat
       var weiter;
       if (!ziel) {
-        weiter = knopf("✓ Alle Blätter erledigt!", "Wiederhole mit Lernkarten und Quiz.", "#/woche/" + INHALTE.wochen[0].id);
+        weiter = knopf(Z.probe() ? "✓ Woche 1 und 2 erledigt!" : "✓ Alle Blätter erledigt!", "Wiederhole mit Lernkarten und Quiz.", "#/woche/" + INHALTE.wochen[0].id);
       } else if (!etwasGemacht) {
         weiter = knopf("▶ Los geht's: Woche " + ziel.woche.nr, ziel.woche.name, ziel.teil.datei);
       } else {
@@ -252,6 +269,7 @@
       inhalt.push(so);
 
       inhalt.push(absatz("Dein Kurs: 10 Wochen", "abschnitt"));
+      if (Z.probe()) inhalt.push(absatz("Probe-Version: Woche 1 und 2 sind frei. Woche 3 bis 10 gibt es in der Vollversion.", "probe-hinweis"));
       inhalt.push(liste(INHALTE.wochen.map(function (w) { return wochenKnopf(w, daten, w.id === hierWoche, true); })));
 
       var mf = knopf("Mein Fortschritt", "zum Herzeigen", "#/fortschritt");

@@ -300,6 +300,12 @@ a.knopf:active .knopf-stand { color: var(--hg); }
 .info-fuss a { color: var(--leise); }
 .link-klein { display: block; text-align: center; margin: 22px 0 0; font-size: 16px; color: var(--leise); }
 
+/* Probe-Version (freischaltung.js): gesperrte Wochen und Seiten */
+.seite-gesperrt main.blatt { visibility: hidden; }
+.gesperrt-box .begruessung { margin: 18px 0 8px; }
+.gesperrt-box .knopf-liste { margin-top: 18px; }
+.probe-hinweis { border: 2px solid var(--rand); border-radius: 12px; padding: 10px 14px; margin: 0 0 14px; font-size: 17px; }
+
 /* PDF-Knopf oben im Blatt (Datei zum Ausdrucken, nicht im Offline-Speicher) */
 .pdf-box { border: 2px solid var(--rand); border-radius: 12px; padding: 8px 12px; margin: 4px 0 14px; }
 .pdf-box .pdf-link { display: block; min-height: 44px; padding: 8px 0; font-size: 19px; font-weight: bold; color: var(--text); text-decoration: underline; }
